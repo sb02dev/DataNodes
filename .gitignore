@@ -1,5 +1,6 @@
 .pytest_cache
-tests/results
+tests/conv
+tests/temp
 *.py[cod]
 *.iml
 *.name

@@ -1,4 +1,7 @@
 """Converters for the DBLib"""  # pylint: disable=invalid-name
+from typing import TYPE_CHECKING
+
+from PyFlow.Core import NodeBase
 
 try:
     from PyFlow.Packages.PythonExporter.Exporters.converter_base import (  # pylint: disable=import-error, no-name-in-module # type: ignore
@@ -7,5 +10,54 @@ try:
 except ImportError:
     from PythonExporter.Exporters.converter_base import ConverterBase
 
+if TYPE_CHECKING:
+    from PythonExporter.Exporters.implementation import PythonExporterImpl
+
+
 class PyCnvDBLib(ConverterBase):  # type: ignore
     """A converter class for the DBLib conversion"""
+
+    @staticmethod
+    def SQLServerConn(exporter: 'PythonExporterImpl',
+                 node: NodeBase,
+                 inpnames: list[str],  # pylint: disable=unused-argument
+                 *args, **kwargs):  # pylint: disable=unused-argument
+        """Convert SQLServerConn node type"""
+        if not exporter.is_node_function_processed(node):
+            exporter.add_import('sqlalchemy', imports=['create_engine', 'URL'])
+            exporter.add_sys_function("""def connect_sqlserver(db_host, db_name, trusted_conn):
+    \"\"\"Connect to an SQL server according to the parameters\"\"\"
+    engine = create_engine(
+        URL.create('mssql+pyodbc', query={'odbc_connect':
+            f"Driver=SQL Server;Server={db_host};" + \\
+            f"Database={db_name};" + \\
+            f"Trusted_Connection={'yes' if trusted_conn else 'no'};"}
+        ),
+        fast_executemany=False,
+        use_setinputsizes=False
+    )
+    return engine""")
+            exporter.set_node_function_processed(node)
+        exporter.add_call(f"{exporter.get_out_list(node, post=' = ')}" + \
+                          f"connect_sqlserver({', '.join(inpnames)})\n")
+        exporter.set_node_processed(node)
+        exporter.call_named_pin(node, 'outExec')
+
+
+    @staticmethod
+    def GenericDBConn(exporter: 'PythonExporterImpl',
+                      node: NodeBase,
+                      inpnames: list[str],  # pylint: disable=unused-argument
+                      *args, **kwargs):  # pylint: disable=unused-argument
+        """Convert GenericDBConn node type"""
+        if not exporter.is_node_function_processed(node):
+            exporter.add_import('sqlalchemy', imports=['create_engine', 'URL'])
+            exporter.add_sys_function("""def connect_genericdb(connection_url):
+    \"\"\"Connect to a generic database according to the connection url\"\"\"
+    engine = create_engine(connection_url)
+    return engine""")
+            exporter.set_node_function_processed(node)
+        exporter.add_call(f"{exporter.get_out_list(node, post=' = ')}" +
+                          f"connect_genericdb({', '.join(inpnames)})\n")
+        exporter.set_node_processed(node)
+        exporter.call_named_pin(node, 'outExec')

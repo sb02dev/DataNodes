@@ -1,0 +1,176 @@
+{
+    "name": "root",
+    "category": "",
+    "vars": [],
+    "nodes": [
+        {
+            "package": "DataNodes",
+            "lib": "DBLib",
+            "type": "SQLServerConn",
+            "owningGraphName": "root",
+            "name": "SQLServerConn",
+            "uuid": "4b3da367-b593-4bd5-b652-7d344336f7af",
+            "inputs": [
+                {
+                    "name": "inExec",
+                    "package": "PyFlowBase",
+                    "fullName": "SQLServerConn_inExec",
+                    "dataType": "ExecPin",
+                    "direction": 0,
+                    "value": "null",
+                    "uuid": "454fccb7-d807-477f-b6b9-10ade571c173",
+                    "linkedTo": [],
+                    "pinIndex": 1,
+                    "options": [
+                        8,
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "inExec",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "trusted_conn",
+                    "package": "PyFlowBase",
+                    "fullName": "SQLServerConn_trusted_conn",
+                    "dataType": "BoolPin",
+                    "direction": 0,
+                    "value": "true",
+                    "uuid": "cc6006d2-f68b-4281-9ee5-b33b83c90f59",
+                    "linkedTo": [],
+                    "pinIndex": 4,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "trusted_conn",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "db_name",
+                    "package": "PyFlowBase",
+                    "fullName": "SQLServerConn_db_name",
+                    "dataType": "StringPin",
+                    "direction": 0,
+                    "value": "\"bbb\"",
+                    "uuid": "61a4671d-e0e9-401e-a8bf-80342aa0371c",
+                    "linkedTo": [],
+                    "pinIndex": 3,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "db_name",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "db_host",
+                    "package": "PyFlowBase",
+                    "fullName": "SQLServerConn_db_host",
+                    "dataType": "StringPin",
+                    "direction": 0,
+                    "value": "\"aaa\"",
+                    "uuid": "aaeae3c2-5f9d-4cc4-8527-9538bad4ba00",
+                    "linkedTo": [],
+                    "pinIndex": 2,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "db_host",
+                        "wires": {}
+                    }
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "out",
+                    "package": "DataNodes",
+                    "fullName": "SQLServerConn_out",
+                    "dataType": "DBEnginePin",
+                    "direction": 1,
+                    "value": null,
+                    "uuid": "3045efa6-e835-4d82-8063-848e9adfb3a2",
+                    "linkedTo": [],
+                    "pinIndex": 2,
+                    "options": [],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "out",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "outExec",
+                    "package": "PyFlowBase",
+                    "fullName": "SQLServerConn_outExec",
+                    "dataType": "ExecPin",
+                    "direction": 1,
+                    "value": "null",
+                    "uuid": "23150dcb-d55e-4d2f-b81f-30583ce0e2a5",
+                    "linkedTo": [],
+                    "pinIndex": 1,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "outExec",
+                        "wires": {}
+                    }
+                }
+            ],
+            "meta": {
+                "var": {},
+                "label": "SQLServerConn"
+            },
+            "wrapper": {
+                "collapsed": false,
+                "headerHtml": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\nhr { height: 1px; border-width: 0; }\nli.unchecked::marker { content: \"\\2610\"; }\nli.checked::marker { content: \"\\2612\"; }\n</style></head><body style=\" font-family:'Consolas'; font-size:6pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">SQLServerConn</p></body></html>",
+                "exposeInputsToCompound": false,
+                "groups": {
+                    "input": {},
+                    "output": {}
+                }
+            },
+            "x": -640.0,
+            "y": -263.0
+        }
+    ],
+    "depth": 1,
+    "isRoot": true,
+    "parentGraphName": "None",
+    "fileVersion": "3.0.0",
+    "activeGraph": "root"
+}
