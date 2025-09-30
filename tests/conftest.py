@@ -12,7 +12,11 @@ from PyFlow.App import PyFlow as PyFlowApp
 @pytest.fixture
 def testfolder():
     """Gets the folder where the tests live"""
-    return os.path.abspath(os.path.dirname(__file__))
+    test_folder = os.path.abspath(os.path.dirname(__file__))
+    temp_folder = os.path.join(test_folder, 'temp')
+    if not os.path.exists(temp_folder):
+        os.mkdir(temp_folder)
+    return test_folder
 
 
 MockPyFlowApp = NamedTuple('MockPyFlowApp', [

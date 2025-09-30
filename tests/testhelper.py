@@ -17,7 +17,10 @@ def run_export_and_compare(pycnv, testfolder, test_name):
     expected, prints the diff and asserts equality.
     """
     fname_graph = os.path.join(testfolder, 'graphs', test_name+'.pygraph')
-    fname_result = os.path.join(testfolder, 'conv', test_name+'.py')
+    res_folder = os.path.join(testfolder, 'conv')
+    if not os.path.exists(res_folder):
+        os.mkdir(res_folder)
+    fname_result = os.path.join(res_folder, test_name+'.py')
     fname_expected = os.path.join(testfolder, 'expectedconv', test_name+'.py')
 
     pycnv.graphLoader(fname_graph)
@@ -53,7 +56,10 @@ def run_graph_in_python(pycnv, testfolder, test_name):
     """Loads a graph, exports to python, runs the python and returns the
     results to assert them."""
     fname_graph = os.path.join(testfolder, 'graphs', test_name+'.pygraph')
-    fname_result = os.path.join(testfolder, 'conv', test_name+'.py')
+    res_folder = os.path.join(testfolder, 'conv')
+    if not os.path.exists(res_folder):
+        os.mkdir(res_folder)
+    fname_result = os.path.join(res_folder, test_name+'.py')
     # load graph and export to python
     pycnv.graphLoader(fname_graph)
     pycnv.exporter(pycnv.app, fname_result)
