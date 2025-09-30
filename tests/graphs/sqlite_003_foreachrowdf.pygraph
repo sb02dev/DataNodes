@@ -1,0 +1,2365 @@
+{
+    "name": "root",
+    "category": "",
+    "vars": [
+        {
+            "name": "result",
+            "value": "\";0:aaa;1:bbb\"",
+            "dataType": "StringPin",
+            "accessLevel": "public",
+            "package": "PyFlowBase",
+            "uuid": "d79d3d3b-3144-4b6a-ba1a-8c8e7346e3e3",
+            "structure": "Single"
+        }
+    ],
+    "nodes": [
+        {
+            "package": "DataNodes",
+            "lib": "DBLib",
+            "type": "GenericDBConn",
+            "owningGraphName": "root",
+            "name": "GenericDBConn",
+            "uuid": "797b5637-23bf-437c-bd40-1a0a33310ab4",
+            "inputs": [
+                {
+                    "name": "connection_url",
+                    "package": "PyFlowBase",
+                    "fullName": "GenericDBConn_connection_url",
+                    "dataType": "StringPin",
+                    "direction": 0,
+                    "value": "\"sqlite:///tests/temp/db.sdb\"",
+                    "uuid": "10454892-73dd-41c1-b0dd-ffb259806d43",
+                    "linkedTo": [],
+                    "pinIndex": 2,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "connection_url",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "inExec",
+                    "package": "PyFlowBase",
+                    "fullName": "GenericDBConn_inExec",
+                    "dataType": "ExecPin",
+                    "direction": 0,
+                    "value": "null",
+                    "uuid": "609c4e96-56de-4c03-9bac-efecca603fe2",
+                    "linkedTo": [],
+                    "pinIndex": 1,
+                    "options": [
+                        8,
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "inExec",
+                        "wires": {}
+                    }
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "out",
+                    "package": "DataNodes",
+                    "fullName": "GenericDBConn_out",
+                    "dataType": "DBEnginePin",
+                    "direction": 1,
+                    "value": null,
+                    "uuid": "eff485ce-a32c-4dd7-bc36-173fc7c50659",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "GenericDBConn",
+                            "outPinId": 2,
+                            "rhsNodeName": "SQLQuery",
+                            "inPinId": 2,
+                            "lhsNodeUid": "797b5637-23bf-437c-bd40-1a0a33310ab4",
+                            "rhsNodeUid": "0fba0a7d-5594-4dcb-904a-d2ff9e9a489f"
+                        }
+                    ],
+                    "pinIndex": 2,
+                    "options": [],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "out",
+                        "wires": {
+                            "2": {
+                                "sourceUUID": "eff485ce-a32c-4dd7-bc36-173fc7c50659",
+                                "destinationUUID": "a40652c0-bbfa-452a-a237-fae91632da06",
+                                "sourceName": "GenericDBConn_out",
+                                "destinationName": "SQLQuery_conn",
+                                "uuid": "4da32d90-14e3-4f07-9e84-5b4f14f6422c",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "outExec",
+                    "package": "PyFlowBase",
+                    "fullName": "GenericDBConn_outExec",
+                    "dataType": "ExecPin",
+                    "direction": 1,
+                    "value": "null",
+                    "uuid": "95c77d07-092b-48d1-88de-9a1b7f2c9d95",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "GenericDBConn",
+                            "outPinId": 1,
+                            "rhsNodeName": "setVar6",
+                            "inPinId": 1,
+                            "lhsNodeUid": "797b5637-23bf-437c-bd40-1a0a33310ab4",
+                            "rhsNodeUid": "13bedb5f-b8a7-4e8e-bfd5-37ed6b9a3d54"
+                        }
+                    ],
+                    "pinIndex": 1,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "outExec",
+                        "wires": {
+                            "1": {
+                                "sourceUUID": "95c77d07-092b-48d1-88de-9a1b7f2c9d95",
+                                "destinationUUID": "69ff242d-1f44-427c-a8c0-e2e6d99879eb",
+                                "sourceName": "GenericDBConn_outExec",
+                                "destinationName": "setVar6_inExec",
+                                "uuid": "036db554-040d-4eb1-a7d5-4734a9bbfa26",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                }
+            ],
+            "meta": {
+                "var": {},
+                "label": "GenericDBConn"
+            },
+            "wrapper": {
+                "collapsed": false,
+                "headerHtml": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\nhr { height: 1px; border-width: 0; }\nli.unchecked::marker { content: \"\\2610\"; }\nli.checked::marker { content: \"\\2612\"; }\n</style></head><body style=\" font-family:'Consolas'; font-size:6pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">GenericDBConn</p></body></html>",
+                "exposeInputsToCompound": false,
+                "groups": {
+                    "input": {},
+                    "output": {}
+                }
+            },
+            "x": -738.0,
+            "y": -296.0
+        },
+        {
+            "package": "DataNodes",
+            "lib": null,
+            "type": "SQLQuery",
+            "owningGraphName": "root",
+            "name": "SQLQuery",
+            "uuid": "0fba0a7d-5594-4dcb-904a-d2ff9e9a489f",
+            "inputs": [
+                {
+                    "name": "sql",
+                    "package": "PyFlowBase",
+                    "fullName": "SQLQuery_sql",
+                    "dataType": "StringPin",
+                    "direction": 0,
+                    "value": "\"select 1 as id, 'aaa' as name\\nunion all\\nselect 2 as id, 'bbb' as name\"",
+                    "uuid": "ec25899b-af61-4d6b-b821-58fc7cb05598",
+                    "linkedTo": [],
+                    "pinIndex": 3,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "sql",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "has_result",
+                    "package": "PyFlowBase",
+                    "fullName": "SQLQuery_has_result",
+                    "dataType": "BoolPin",
+                    "direction": 0,
+                    "value": "true",
+                    "uuid": "f57904b3-87a2-48e4-b16c-ddc9e5cc0dd3",
+                    "linkedTo": [],
+                    "pinIndex": 4,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "has_result",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "query",
+                    "package": "PyFlowBase",
+                    "fullName": "SQLQuery_query",
+                    "dataType": "ExecPin",
+                    "direction": 0,
+                    "value": "null",
+                    "uuid": "438d338d-4c7f-4cfc-b2c0-a5f864f42f0d",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "setVar6",
+                            "outPinId": 1,
+                            "rhsNodeName": "SQLQuery",
+                            "inPinId": 1,
+                            "lhsNodeUid": "13bedb5f-b8a7-4e8e-bfd5-37ed6b9a3d54",
+                            "rhsNodeUid": "0fba0a7d-5594-4dcb-904a-d2ff9e9a489f"
+                        }
+                    ],
+                    "pinIndex": 1,
+                    "options": [
+                        8,
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "query",
+                        "wires": {
+                            "1": {
+                                "sourceUUID": "b8e3339c-4bd1-409e-97e7-2f9458f789b4",
+                                "destinationUUID": "438d338d-4c7f-4cfc-b2c0-a5f864f42f0d",
+                                "sourceName": "setVar6_outExec",
+                                "destinationName": "SQLQuery_query",
+                                "uuid": "2d2e57a9-02ad-4a96-a3bf-8d77505459cd",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "param_dict",
+                    "package": "PyFlowBase",
+                    "fullName": "SQLQuery_param_dict",
+                    "dataType": "AnyPin",
+                    "direction": 0,
+                    "value": null,
+                    "uuid": "3d9a9b37-9e71-4705-b629-e174bdef04d5",
+                    "linkedTo": [],
+                    "pinIndex": 5,
+                    "options": [
+                        4,
+                        16,
+                        256,
+                        512
+                    ],
+                    "structure": 2,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": true,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "param_dict",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "conn",
+                    "package": "DataNodes",
+                    "fullName": "SQLQuery_conn",
+                    "dataType": "DBEnginePin",
+                    "direction": 0,
+                    "value": null,
+                    "uuid": "a40652c0-bbfa-452a-a237-fae91632da06",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "GenericDBConn",
+                            "outPinId": 2,
+                            "rhsNodeName": "SQLQuery",
+                            "inPinId": 2,
+                            "lhsNodeUid": "797b5637-23bf-437c-bd40-1a0a33310ab4",
+                            "rhsNodeUid": "0fba0a7d-5594-4dcb-904a-d2ff9e9a489f"
+                        }
+                    ],
+                    "pinIndex": 2,
+                    "options": [],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "conn",
+                        "wires": {
+                            "2": {
+                                "sourceUUID": "eff485ce-a32c-4dd7-bc36-173fc7c50659",
+                                "destinationUUID": "a40652c0-bbfa-452a-a237-fae91632da06",
+                                "sourceName": "GenericDBConn_out",
+                                "destinationName": "SQLQuery_conn",
+                                "uuid": "4da32d90-14e3-4f07-9e84-5b4f14f6422c",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "completed",
+                    "package": "PyFlowBase",
+                    "fullName": "SQLQuery_completed",
+                    "dataType": "ExecPin",
+                    "direction": 1,
+                    "value": "null",
+                    "uuid": "1445c00a-0781-47dd-b614-e14860958a82",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "SQLQuery",
+                            "outPinId": 1,
+                            "rhsNodeName": "forEachRowDF",
+                            "inPinId": 1,
+                            "lhsNodeUid": "0fba0a7d-5594-4dcb-904a-d2ff9e9a489f",
+                            "rhsNodeUid": "26fecad4-75d3-4a9c-9911-e244fbfbf87b"
+                        }
+                    ],
+                    "pinIndex": 1,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "completed",
+                        "wires": {
+                            "1": {
+                                "sourceUUID": "1445c00a-0781-47dd-b614-e14860958a82",
+                                "destinationUUID": "e3ec8723-9d77-437d-8a6b-d86c5d3b7bc3",
+                                "sourceName": "SQLQuery_completed",
+                                "destinationName": "forEachRowDF_inExec",
+                                "uuid": "154c93ea-2fd7-41bb-b5d9-d5d2aa84256f",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "result",
+                    "package": "DataNodes",
+                    "fullName": "SQLQuery_result",
+                    "dataType": "DataFramePin",
+                    "direction": 1,
+                    "value": null,
+                    "uuid": "43e394e1-3f60-4211-9b53-5efc0e1c5214",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "SQLQuery",
+                            "outPinId": 2,
+                            "rhsNodeName": "forEachRowDF",
+                            "inPinId": 2,
+                            "lhsNodeUid": "0fba0a7d-5594-4dcb-904a-d2ff9e9a489f",
+                            "rhsNodeUid": "26fecad4-75d3-4a9c-9911-e244fbfbf87b"
+                        }
+                    ],
+                    "pinIndex": 2,
+                    "options": [],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "result",
+                        "wires": {
+                            "2": {
+                                "sourceUUID": "43e394e1-3f60-4211-9b53-5efc0e1c5214",
+                                "destinationUUID": "361e6672-c4ae-4ddb-9da4-77e76dda5f89",
+                                "sourceName": "SQLQuery_result",
+                                "destinationName": "forEachRowDF_df",
+                                "uuid": "8265fb6e-1f3d-4fe1-ad92-ecb7b690faae",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                }
+            ],
+            "meta": {
+                "var": {},
+                "label": "SQLQuery"
+            },
+            "wrapper": {
+                "collapsed": false,
+                "headerHtml": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\nhr { height: 1px; border-width: 0; }\nli.unchecked::marker { content: \"\\2610\"; }\nli.checked::marker { content: \"\\2612\"; }\n</style></head><body style=\" font-family:'Consolas'; font-size:6pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">SQLQuery</p></body></html>",
+                "exposeInputsToCompound": false,
+                "groups": {
+                    "input": {},
+                    "output": {}
+                }
+            },
+            "x": -424.0,
+            "y": -313.0
+        },
+        {
+            "package": "DataNodes",
+            "lib": null,
+            "type": "forEachRowDF",
+            "owningGraphName": "root",
+            "name": "forEachRowDF",
+            "uuid": "26fecad4-75d3-4a9c-9911-e244fbfbf87b",
+            "inputs": [
+                {
+                    "name": "inExec",
+                    "package": "PyFlowBase",
+                    "fullName": "forEachRowDF_inExec",
+                    "dataType": "ExecPin",
+                    "direction": 0,
+                    "value": "null",
+                    "uuid": "e3ec8723-9d77-437d-8a6b-d86c5d3b7bc3",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "SQLQuery",
+                            "outPinId": 1,
+                            "rhsNodeName": "forEachRowDF",
+                            "inPinId": 1,
+                            "lhsNodeUid": "0fba0a7d-5594-4dcb-904a-d2ff9e9a489f",
+                            "rhsNodeUid": "26fecad4-75d3-4a9c-9911-e244fbfbf87b"
+                        }
+                    ],
+                    "pinIndex": 1,
+                    "options": [
+                        8,
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "inExec",
+                        "wires": {
+                            "1": {
+                                "sourceUUID": "1445c00a-0781-47dd-b614-e14860958a82",
+                                "destinationUUID": "e3ec8723-9d77-437d-8a6b-d86c5d3b7bc3",
+                                "sourceName": "SQLQuery_completed",
+                                "destinationName": "forEachRowDF_inExec",
+                                "uuid": "154c93ea-2fd7-41bb-b5d9-d5d2aa84256f",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "df",
+                    "package": "DataNodes",
+                    "fullName": "forEachRowDF_df",
+                    "dataType": "DataFramePin",
+                    "direction": 0,
+                    "value": null,
+                    "uuid": "361e6672-c4ae-4ddb-9da4-77e76dda5f89",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "SQLQuery",
+                            "outPinId": 2,
+                            "rhsNodeName": "forEachRowDF",
+                            "inPinId": 2,
+                            "lhsNodeUid": "0fba0a7d-5594-4dcb-904a-d2ff9e9a489f",
+                            "rhsNodeUid": "26fecad4-75d3-4a9c-9911-e244fbfbf87b"
+                        }
+                    ],
+                    "pinIndex": 2,
+                    "options": [
+                        512
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "df",
+                        "wires": {
+                            "2": {
+                                "sourceUUID": "43e394e1-3f60-4211-9b53-5efc0e1c5214",
+                                "destinationUUID": "361e6672-c4ae-4ddb-9da4-77e76dda5f89",
+                                "sourceName": "SQLQuery_result",
+                                "destinationName": "forEachRowDF_df",
+                                "uuid": "8265fb6e-1f3d-4fe1-ad92-ecb7b690faae",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "loop_body",
+                    "package": "PyFlowBase",
+                    "fullName": "forEachRowDF_loop_body",
+                    "dataType": "ExecPin",
+                    "direction": 1,
+                    "value": "null",
+                    "uuid": "b79a62a0-a78f-4b17-9e38-6e766346a779",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "forEachRowDF",
+                            "outPinId": 1,
+                            "rhsNodeName": "setVar",
+                            "inPinId": 1,
+                            "lhsNodeUid": "26fecad4-75d3-4a9c-9911-e244fbfbf87b",
+                            "rhsNodeUid": "aaa08212-ab69-40e8-8326-d97247c3f020"
+                        }
+                    ],
+                    "pinIndex": 1,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "loop_body",
+                        "wires": {
+                            "1": {
+                                "sourceUUID": "b79a62a0-a78f-4b17-9e38-6e766346a779",
+                                "destinationUUID": "63566f8d-c286-4abe-a370-321a78c4c179",
+                                "sourceName": "forEachRowDF_loop_body",
+                                "destinationName": "setVar_inExec",
+                                "uuid": "0568a0c2-5e0c-4ff6-9be4-61779f3d212d",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "row",
+                    "package": "DataNodes",
+                    "fullName": "forEachRowDF_row",
+                    "dataType": "SeriesPin",
+                    "direction": 1,
+                    "value": null,
+                    "uuid": "a59f8165-0aba-4364-a319-aeedacfa2d4c",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "forEachRowDF",
+                            "outPinId": 3,
+                            "rhsNodeName": "GetSeriesValue",
+                            "inPinId": 1,
+                            "lhsNodeUid": "26fecad4-75d3-4a9c-9911-e244fbfbf87b",
+                            "rhsNodeUid": "178902c2-4a73-4678-a9c8-7fc4533fe367"
+                        }
+                    ],
+                    "pinIndex": 3,
+                    "options": [
+                        512
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "row",
+                        "wires": {
+                            "1": {
+                                "sourceUUID": "a59f8165-0aba-4364-a319-aeedacfa2d4c",
+                                "destinationUUID": "8abaafa5-76f7-4831-b12b-61e71ac99170",
+                                "sourceName": "forEachRowDF_row",
+                                "destinationName": "GetSeriesValue_series",
+                                "uuid": "44b970f9-8142-4362-9976-18e6d3290428",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "completed",
+                    "package": "PyFlowBase",
+                    "fullName": "forEachRowDF_completed",
+                    "dataType": "ExecPin",
+                    "direction": 1,
+                    "value": "null",
+                    "uuid": "d183fc90-6098-4cb8-af53-7aba1eb8c011",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "forEachRowDF",
+                            "outPinId": 4,
+                            "rhsNodeName": "consoleOutput2",
+                            "inPinId": 1,
+                            "lhsNodeUid": "26fecad4-75d3-4a9c-9911-e244fbfbf87b",
+                            "rhsNodeUid": "374793f2-72ab-4c32-a121-cb4bbc548252"
+                        }
+                    ],
+                    "pinIndex": 4,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "completed",
+                        "wires": {
+                            "1": {
+                                "sourceUUID": "d183fc90-6098-4cb8-af53-7aba1eb8c011",
+                                "destinationUUID": "61ad38e5-bedc-4bb9-b4ea-c9b7225bacba",
+                                "sourceName": "forEachRowDF_completed",
+                                "destinationName": "consoleOutput2_inExec",
+                                "uuid": "cdda7e55-b82e-4ae9-a2d0-99ba44d6fc02",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "idx",
+                    "package": "PyFlowBase",
+                    "fullName": "forEachRowDF_idx",
+                    "dataType": "AnyPin",
+                    "direction": 1,
+                    "value": "1",
+                    "uuid": "f4a6af73-f617-4f3f-8ee2-d5f4c5db70e5",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "forEachRowDF",
+                            "outPinId": 2,
+                            "rhsNodeName": "convertTo",
+                            "inPinId": 1,
+                            "lhsNodeUid": "26fecad4-75d3-4a9c-9911-e244fbfbf87b",
+                            "rhsNodeUid": "b0ec0e43-2d46-438e-b962-3a797bede84c"
+                        }
+                    ],
+                    "pinIndex": 2,
+                    "options": [
+                        16,
+                        256,
+                        512
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "idx",
+                        "wires": {
+                            "1": {
+                                "sourceUUID": "f4a6af73-f617-4f3f-8ee2-d5f4c5db70e5",
+                                "destinationUUID": "38e787a0-b8a9-4b0d-80ec-fb80c9728cc9",
+                                "sourceName": "forEachRowDF_idx",
+                                "destinationName": "convertTo_in",
+                                "uuid": "1ee2ebe4-7140-47a3-8edf-af47585560cc",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    },
+                    "currDataType": "IntPin"
+                }
+            ],
+            "meta": {
+                "var": {},
+                "label": "forEachRowDF"
+            },
+            "wrapper": {
+                "collapsed": false,
+                "headerHtml": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\nhr { height: 1px; border-width: 0; }\nli.unchecked::marker { content: \"\\2610\"; }\nli.checked::marker { content: \"\\2612\"; }\n</style></head><body style=\" font-family:'Consolas'; font-size:6pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">forEachRowDF</p></body></html>",
+                "exposeInputsToCompound": false,
+                "groups": {
+                    "input": {},
+                    "output": {}
+                }
+            },
+            "x": -250.0,
+            "y": -283.0
+        },
+        {
+            "package": "PyFlowBase",
+            "lib": null,
+            "type": "consoleOutput",
+            "owningGraphName": "root",
+            "name": "consoleOutput2",
+            "uuid": "374793f2-72ab-4c32-a121-cb4bbc548252",
+            "inputs": [
+                {
+                    "name": "entity",
+                    "package": "PyFlowBase",
+                    "fullName": "consoleOutput2_entity",
+                    "dataType": "AnyPin",
+                    "direction": 0,
+                    "value": "\";0:aaa;1:bbb\"",
+                    "uuid": "cb905350-366c-41fa-b5aa-b3fa5825f371",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "getVar",
+                            "outPinId": 1,
+                            "rhsNodeName": "consoleOutput2",
+                            "inPinId": 2,
+                            "lhsNodeUid": "57a7c36c-7383-41e7-bdc0-94c0ba66a70b",
+                            "rhsNodeUid": "374793f2-72ab-4c32-a121-cb4bbc548252"
+                        }
+                    ],
+                    "pinIndex": 2,
+                    "options": [
+                        16,
+                        256,
+                        512
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "entity",
+                        "wires": {
+                            "2": {
+                                "sourceUUID": "db3c798d-be3c-4ec2-8ac3-7cf0dc9acc75",
+                                "destinationUUID": "cb905350-366c-41fa-b5aa-b3fa5825f371",
+                                "sourceName": "getVar_out",
+                                "destinationName": "consoleOutput2_entity",
+                                "uuid": "b32a8913-e7d3-44d9-9d03-ab97ff96117a",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    },
+                    "currDataType": "StringPin"
+                },
+                {
+                    "name": "inExec",
+                    "package": "PyFlowBase",
+                    "fullName": "consoleOutput2_inExec",
+                    "dataType": "ExecPin",
+                    "direction": 0,
+                    "value": "null",
+                    "uuid": "61ad38e5-bedc-4bb9-b4ea-c9b7225bacba",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "forEachRowDF",
+                            "outPinId": 4,
+                            "rhsNodeName": "consoleOutput2",
+                            "inPinId": 1,
+                            "lhsNodeUid": "26fecad4-75d3-4a9c-9911-e244fbfbf87b",
+                            "rhsNodeUid": "374793f2-72ab-4c32-a121-cb4bbc548252"
+                        }
+                    ],
+                    "pinIndex": 1,
+                    "options": [
+                        8,
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "inExec",
+                        "wires": {
+                            "1": {
+                                "sourceUUID": "d183fc90-6098-4cb8-af53-7aba1eb8c011",
+                                "destinationUUID": "61ad38e5-bedc-4bb9-b4ea-c9b7225bacba",
+                                "sourceName": "forEachRowDF_completed",
+                                "destinationName": "consoleOutput2_inExec",
+                                "uuid": "cdda7e55-b82e-4ae9-a2d0-99ba44d6fc02",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "outExec",
+                    "package": "PyFlowBase",
+                    "fullName": "consoleOutput2_outExec",
+                    "dataType": "ExecPin",
+                    "direction": 1,
+                    "value": "null",
+                    "uuid": "d37f6332-216f-4853-8b27-df66db947b86",
+                    "linkedTo": [],
+                    "pinIndex": 1,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "outExec",
+                        "wires": {}
+                    }
+                }
+            ],
+            "meta": {
+                "var": {},
+                "label": "consoleOutput2"
+            },
+            "wrapper": {
+                "collapsed": false,
+                "headerHtml": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\nhr { height: 1px; border-width: 0; }\nli.unchecked::marker { content: \"\\2610\"; }\nli.checked::marker { content: \"\\2612\"; }\n</style></head><body style=\" font-family:'Consolas'; font-size:6pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">consoleOutput2</p></body></html>",
+                "exposeInputsToCompound": false,
+                "groups": {
+                    "input": {},
+                    "output": {}
+                }
+            },
+            "x": -86.0,
+            "y": 99.0
+        },
+        {
+            "package": "DataNodes",
+            "lib": "DBLib",
+            "type": "GetSeriesValue",
+            "owningGraphName": "root",
+            "name": "GetSeriesValue",
+            "uuid": "178902c2-4a73-4678-a9c8-7fc4533fe367",
+            "inputs": [
+                {
+                    "name": "series",
+                    "package": "DataNodes",
+                    "fullName": "GetSeriesValue_series",
+                    "dataType": "SeriesPin",
+                    "direction": 0,
+                    "value": null,
+                    "uuid": "8abaafa5-76f7-4831-b12b-61e71ac99170",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "forEachRowDF",
+                            "outPinId": 3,
+                            "rhsNodeName": "GetSeriesValue",
+                            "inPinId": 1,
+                            "lhsNodeUid": "26fecad4-75d3-4a9c-9911-e244fbfbf87b",
+                            "rhsNodeUid": "178902c2-4a73-4678-a9c8-7fc4533fe367"
+                        }
+                    ],
+                    "pinIndex": 1,
+                    "options": [],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "series",
+                        "wires": {
+                            "1": {
+                                "sourceUUID": "a59f8165-0aba-4364-a319-aeedacfa2d4c",
+                                "destinationUUID": "8abaafa5-76f7-4831-b12b-61e71ac99170",
+                                "sourceName": "forEachRowDF_row",
+                                "destinationName": "GetSeriesValue_series",
+                                "uuid": "44b970f9-8142-4362-9976-18e6d3290428",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "to_locate",
+                    "package": "PyFlowBase",
+                    "fullName": "GetSeriesValue_to_locate",
+                    "dataType": "AnyPin",
+                    "direction": 0,
+                    "value": "\"name\"",
+                    "uuid": "0a953618-fa56-4021-bdad-8f4e199a15c3",
+                    "linkedTo": [],
+                    "pinIndex": 2,
+                    "options": [
+                        16,
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "to_locate",
+                        "wires": {}
+                    },
+                    "currDataType": "StringPin"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "out",
+                    "package": "PyFlowBase",
+                    "fullName": "GetSeriesValue_out",
+                    "dataType": "AnyPin",
+                    "direction": 1,
+                    "value": "\"bbb\"",
+                    "uuid": "959f029c-13c3-45f1-b593-83bffb210b27",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "GetSeriesValue",
+                            "outPinId": 1,
+                            "rhsNodeName": "concat1",
+                            "inPinId": 2,
+                            "lhsNodeUid": "178902c2-4a73-4678-a9c8-7fc4533fe367",
+                            "rhsNodeUid": "3893f3e3-b17d-40ef-a118-5c2ab952e05b"
+                        }
+                    ],
+                    "pinIndex": 1,
+                    "options": [
+                        16,
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "out",
+                        "wires": {
+                            "2": {
+                                "sourceUUID": "959f029c-13c3-45f1-b593-83bffb210b27",
+                                "destinationUUID": "8932e654-4f32-4ba9-b33d-999ff10e85f4",
+                                "sourceName": "GetSeriesValue_out",
+                                "destinationName": "concat1_s2",
+                                "uuid": "ccad3d4f-2d6b-4802-9115-7066b977451b",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    },
+                    "currDataType": "StringPin"
+                }
+            ],
+            "meta": {
+                "var": {},
+                "label": "GetSeriesValue"
+            },
+            "wrapper": {
+                "collapsed": false,
+                "headerHtml": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\nhr { height: 1px; border-width: 0; }\nli.unchecked::marker { content: \"\\2610\"; }\nli.checked::marker { content: \"\\2612\"; }\n</style></head><body style=\" font-family:'Consolas'; font-size:6pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">GetSeriesValue</p></body></html>",
+                "exposeInputsToCompound": false,
+                "groups": {
+                    "input": {},
+                    "output": {}
+                }
+            },
+            "x": -13.0,
+            "y": -212.0
+        },
+        {
+            "package": "PyFlowBase",
+            "lib": null,
+            "type": "getVar",
+            "owningGraphName": "root",
+            "name": "getVar",
+            "uuid": "57a7c36c-7383-41e7-bdc0-94c0ba66a70b",
+            "inputs": [],
+            "outputs": [
+                {
+                    "name": "out",
+                    "package": "PyFlowBase",
+                    "fullName": "getVar_out",
+                    "dataType": "StringPin",
+                    "direction": 1,
+                    "value": "\";0:aaa;1:bbb\"",
+                    "uuid": "db3c798d-be3c-4ec2-8ac3-7cf0dc9acc75",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "getVar",
+                            "outPinId": 1,
+                            "rhsNodeName": "consoleOutput2",
+                            "inPinId": 2,
+                            "lhsNodeUid": "57a7c36c-7383-41e7-bdc0-94c0ba66a70b",
+                            "rhsNodeUid": "374793f2-72ab-4c32-a121-cb4bbc548252"
+                        }
+                    ],
+                    "pinIndex": 1,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "out",
+                        "wires": {
+                            "2": {
+                                "sourceUUID": "db3c798d-be3c-4ec2-8ac3-7cf0dc9acc75",
+                                "destinationUUID": "cb905350-366c-41fa-b5aa-b3fa5825f371",
+                                "sourceName": "getVar_out",
+                                "destinationName": "consoleOutput2_entity",
+                                "uuid": "b32a8913-e7d3-44d9-9d03-ab97ff96117a",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                }
+            ],
+            "meta": {
+                "var": {},
+                "label": "getVar"
+            },
+            "wrapper": {
+                "collapsed": false,
+                "headerHtml": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\nhr { height: 1px; border-width: 0; }\nli.unchecked::marker { content: \"\\2610\"; }\nli.checked::marker { content: \"\\2612\"; }\n</style></head><body style=\" font-family:'Consolas'; font-size:6pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Get result</p></body></html>",
+                "exposeInputsToCompound": false,
+                "groups": {
+                    "input": {},
+                    "output": {}
+                }
+            },
+            "x": -234.0,
+            "y": 164.0,
+            "varUid": "d79d3d3b-3144-4b6a-ba1a-8c8e7346e3e3"
+        },
+        {
+            "package": "PyFlowBase",
+            "lib": null,
+            "type": "convertTo",
+            "owningGraphName": "root",
+            "name": "convertTo",
+            "uuid": "b0ec0e43-2d46-438e-b962-3a797bede84c",
+            "inputs": [
+                {
+                    "name": "in",
+                    "package": "PyFlowBase",
+                    "fullName": "convertTo_in",
+                    "dataType": "AnyPin",
+                    "direction": 0,
+                    "value": "1",
+                    "uuid": "38e787a0-b8a9-4b0d-80ec-fb80c9728cc9",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "forEachRowDF",
+                            "outPinId": 2,
+                            "rhsNodeName": "convertTo",
+                            "inPinId": 1,
+                            "lhsNodeUid": "26fecad4-75d3-4a9c-9911-e244fbfbf87b",
+                            "rhsNodeUid": "b0ec0e43-2d46-438e-b962-3a797bede84c"
+                        }
+                    ],
+                    "pinIndex": 1,
+                    "options": [
+                        16,
+                        256,
+                        512
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "in",
+                        "wires": {
+                            "1": {
+                                "sourceUUID": "f4a6af73-f617-4f3f-8ee2-d5f4c5db70e5",
+                                "destinationUUID": "38e787a0-b8a9-4b0d-80ec-fb80c9728cc9",
+                                "sourceName": "forEachRowDF_idx",
+                                "destinationName": "convertTo_in",
+                                "uuid": "1ee2ebe4-7140-47a3-8edf-af47585560cc",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    },
+                    "currDataType": "IntPin"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "result",
+                    "package": "PyFlowBase",
+                    "fullName": "convertTo_result",
+                    "dataType": "AnyPin",
+                    "direction": 1,
+                    "value": "\"\"",
+                    "uuid": "8cafeadb-1029-4139-93d1-813a23ab9d84",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "convertTo",
+                            "outPinId": 1,
+                            "rhsNodeName": "concat",
+                            "inPinId": 1,
+                            "lhsNodeUid": "b0ec0e43-2d46-438e-b962-3a797bede84c",
+                            "rhsNodeUid": "66cc92cd-8796-4c50-a741-cafad3eb6c0d"
+                        }
+                    ],
+                    "pinIndex": 1,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "result",
+                        "wires": {
+                            "1": {
+                                "sourceUUID": "8cafeadb-1029-4139-93d1-813a23ab9d84",
+                                "destinationUUID": "296ebf24-015a-40d0-9c70-e57617b0d3df",
+                                "sourceName": "convertTo_result",
+                                "destinationName": "concat_s1",
+                                "uuid": "41476904-c53e-414a-8764-b8688791c8c8",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    },
+                    "currDataType": "StringPin"
+                }
+            ],
+            "meta": {
+                "var": {},
+                "label": "convertTo"
+            },
+            "wrapper": {
+                "collapsed": false,
+                "headerHtml": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\nhr { height: 1px; border-width: 0; }\nli.unchecked::marker { content: \"\\2610\"; }\nli.checked::marker { content: \"\\2612\"; }\n</style></head><body style=\" font-family:'Consolas'; font-size:6pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">convertTo</p></body></html>",
+                "exposeInputsToCompound": false,
+                "groups": {
+                    "input": {},
+                    "output": {}
+                }
+            },
+            "x": -15.0,
+            "y": -279.0,
+            "currDataType": "StringPin"
+        },
+        {
+            "package": "PyFlowBase",
+            "lib": "StringLib",
+            "type": "concat",
+            "owningGraphName": "root",
+            "name": "concat",
+            "uuid": "66cc92cd-8796-4c50-a741-cafad3eb6c0d",
+            "inputs": [
+                {
+                    "name": "s1",
+                    "package": "PyFlowBase",
+                    "fullName": "concat_s1",
+                    "dataType": "AnyPin",
+                    "direction": 0,
+                    "value": "\"\"",
+                    "uuid": "296ebf24-015a-40d0-9c70-e57617b0d3df",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "convertTo",
+                            "outPinId": 1,
+                            "rhsNodeName": "concat",
+                            "inPinId": 1,
+                            "lhsNodeUid": "b0ec0e43-2d46-438e-b962-3a797bede84c",
+                            "rhsNodeUid": "66cc92cd-8796-4c50-a741-cafad3eb6c0d"
+                        }
+                    ],
+                    "pinIndex": 1,
+                    "options": [
+                        16,
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "s1",
+                        "wires": {
+                            "1": {
+                                "sourceUUID": "8cafeadb-1029-4139-93d1-813a23ab9d84",
+                                "destinationUUID": "296ebf24-015a-40d0-9c70-e57617b0d3df",
+                                "sourceName": "convertTo_result",
+                                "destinationName": "concat_s1",
+                                "uuid": "41476904-c53e-414a-8764-b8688791c8c8",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    },
+                    "currDataType": "StringPin"
+                },
+                {
+                    "name": "s2",
+                    "package": "PyFlowBase",
+                    "fullName": "concat_s2",
+                    "dataType": "AnyPin",
+                    "direction": 0,
+                    "value": "\":\"",
+                    "uuid": "5272a81b-419e-4d29-bea0-51fd5d487f49",
+                    "linkedTo": [],
+                    "pinIndex": 2,
+                    "options": [
+                        16,
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "s2",
+                        "wires": {}
+                    },
+                    "currDataType": "StringPin"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "out",
+                    "package": "PyFlowBase",
+                    "fullName": "concat_out",
+                    "dataType": "StringPin",
+                    "direction": 1,
+                    "value": "\"1:\"",
+                    "uuid": "dc5061ca-e6f3-4902-ab5b-b3f0d03b0826",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "concat",
+                            "outPinId": 1,
+                            "rhsNodeName": "concat1",
+                            "inPinId": 1,
+                            "lhsNodeUid": "66cc92cd-8796-4c50-a741-cafad3eb6c0d",
+                            "rhsNodeUid": "3893f3e3-b17d-40ef-a118-5c2ab952e05b"
+                        }
+                    ],
+                    "pinIndex": 1,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "out",
+                        "wires": {
+                            "1": {
+                                "sourceUUID": "dc5061ca-e6f3-4902-ab5b-b3f0d03b0826",
+                                "destinationUUID": "d4ce3669-4638-46f5-85bb-acc2426635e1",
+                                "sourceName": "concat_out",
+                                "destinationName": "concat1_s1",
+                                "uuid": "c9cddc5b-25ca-42a9-8b49-f2fc9f045494",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                }
+            ],
+            "meta": {
+                "var": {},
+                "label": "concat"
+            },
+            "wrapper": {
+                "collapsed": false,
+                "headerHtml": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\nhr { height: 1px; border-width: 0; }\nli.unchecked::marker { content: \"\\2610\"; }\nli.checked::marker { content: \"\\2612\"; }\n</style></head><body style=\" font-family:'Consolas'; font-size:6pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">concat</p></body></html>",
+                "exposeInputsToCompound": false,
+                "groups": {
+                    "input": {},
+                    "output": {}
+                }
+            },
+            "x": 170.0,
+            "y": -274.0
+        },
+        {
+            "package": "PyFlowBase",
+            "lib": "StringLib",
+            "type": "concat",
+            "owningGraphName": "root",
+            "name": "concat1",
+            "uuid": "3893f3e3-b17d-40ef-a118-5c2ab952e05b",
+            "inputs": [
+                {
+                    "name": "s2",
+                    "package": "PyFlowBase",
+                    "fullName": "concat1_s2",
+                    "dataType": "AnyPin",
+                    "direction": 0,
+                    "value": "\"bbb\"",
+                    "uuid": "8932e654-4f32-4ba9-b33d-999ff10e85f4",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "GetSeriesValue",
+                            "outPinId": 1,
+                            "rhsNodeName": "concat1",
+                            "inPinId": 2,
+                            "lhsNodeUid": "178902c2-4a73-4678-a9c8-7fc4533fe367",
+                            "rhsNodeUid": "3893f3e3-b17d-40ef-a118-5c2ab952e05b"
+                        }
+                    ],
+                    "pinIndex": 2,
+                    "options": [
+                        16,
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "s2",
+                        "wires": {
+                            "2": {
+                                "sourceUUID": "959f029c-13c3-45f1-b593-83bffb210b27",
+                                "destinationUUID": "8932e654-4f32-4ba9-b33d-999ff10e85f4",
+                                "sourceName": "GetSeriesValue_out",
+                                "destinationName": "concat1_s2",
+                                "uuid": "ccad3d4f-2d6b-4802-9115-7066b977451b",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    },
+                    "currDataType": "StringPin"
+                },
+                {
+                    "name": "s1",
+                    "package": "PyFlowBase",
+                    "fullName": "concat1_s1",
+                    "dataType": "AnyPin",
+                    "direction": 0,
+                    "value": "\"1:\"",
+                    "uuid": "d4ce3669-4638-46f5-85bb-acc2426635e1",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "concat",
+                            "outPinId": 1,
+                            "rhsNodeName": "concat1",
+                            "inPinId": 1,
+                            "lhsNodeUid": "66cc92cd-8796-4c50-a741-cafad3eb6c0d",
+                            "rhsNodeUid": "3893f3e3-b17d-40ef-a118-5c2ab952e05b"
+                        }
+                    ],
+                    "pinIndex": 1,
+                    "options": [
+                        16,
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "s1",
+                        "wires": {
+                            "1": {
+                                "sourceUUID": "dc5061ca-e6f3-4902-ab5b-b3f0d03b0826",
+                                "destinationUUID": "d4ce3669-4638-46f5-85bb-acc2426635e1",
+                                "sourceName": "concat_out",
+                                "destinationName": "concat1_s1",
+                                "uuid": "c9cddc5b-25ca-42a9-8b49-f2fc9f045494",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    },
+                    "currDataType": "StringPin"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "out",
+                    "package": "PyFlowBase",
+                    "fullName": "concat1_out",
+                    "dataType": "StringPin",
+                    "direction": 1,
+                    "value": "\"1:bbb\"",
+                    "uuid": "80cb4f70-50bf-417e-a912-2565e13cf735",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "concat1",
+                            "outPinId": 1,
+                            "rhsNodeName": "concat3",
+                            "inPinId": 2,
+                            "lhsNodeUid": "3893f3e3-b17d-40ef-a118-5c2ab952e05b",
+                            "rhsNodeUid": "45812fd3-b039-452d-b0b2-9418df4d20c3"
+                        }
+                    ],
+                    "pinIndex": 1,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "out",
+                        "wires": {
+                            "2": {
+                                "sourceUUID": "80cb4f70-50bf-417e-a912-2565e13cf735",
+                                "destinationUUID": "e684c0c8-22a6-4242-928e-760ea5ec1bed",
+                                "sourceName": "concat1_out",
+                                "destinationName": "concat3_s2",
+                                "uuid": "ee33a615-de73-4d55-9fc1-403ff6fa9bfb",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                }
+            ],
+            "meta": {
+                "var": {},
+                "label": "concat1"
+            },
+            "wrapper": {
+                "collapsed": false,
+                "headerHtml": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\nhr { height: 1px; border-width: 0; }\nli.unchecked::marker { content: \"\\2610\"; }\nli.checked::marker { content: \"\\2612\"; }\n</style></head><body style=\" font-family:'Consolas'; font-size:6pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">concat1</p></body></html>",
+                "exposeInputsToCompound": false,
+                "groups": {
+                    "input": {},
+                    "output": {}
+                }
+            },
+            "x": 280.0,
+            "y": -191.0
+        },
+        {
+            "package": "PyFlowBase",
+            "lib": "StringLib",
+            "type": "concat",
+            "owningGraphName": "root",
+            "name": "concat3",
+            "uuid": "45812fd3-b039-452d-b0b2-9418df4d20c3",
+            "inputs": [
+                {
+                    "name": "s2",
+                    "package": "PyFlowBase",
+                    "fullName": "concat3_s2",
+                    "dataType": "AnyPin",
+                    "direction": 0,
+                    "value": "\"1:bbb\"",
+                    "uuid": "e684c0c8-22a6-4242-928e-760ea5ec1bed",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "concat1",
+                            "outPinId": 1,
+                            "rhsNodeName": "concat3",
+                            "inPinId": 2,
+                            "lhsNodeUid": "3893f3e3-b17d-40ef-a118-5c2ab952e05b",
+                            "rhsNodeUid": "45812fd3-b039-452d-b0b2-9418df4d20c3"
+                        }
+                    ],
+                    "pinIndex": 2,
+                    "options": [
+                        16,
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "s2",
+                        "wires": {
+                            "2": {
+                                "sourceUUID": "80cb4f70-50bf-417e-a912-2565e13cf735",
+                                "destinationUUID": "e684c0c8-22a6-4242-928e-760ea5ec1bed",
+                                "sourceName": "concat1_out",
+                                "destinationName": "concat3_s2",
+                                "uuid": "ee33a615-de73-4d55-9fc1-403ff6fa9bfb",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    },
+                    "currDataType": "StringPin"
+                },
+                {
+                    "name": "s1",
+                    "package": "PyFlowBase",
+                    "fullName": "concat3_s1",
+                    "dataType": "AnyPin",
+                    "direction": 0,
+                    "value": "\";0:aaa;\"",
+                    "uuid": "1eb017ca-3c7b-4ece-b8b4-b6782e41b7c7",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "concat5",
+                            "outPinId": 1,
+                            "rhsNodeName": "concat3",
+                            "inPinId": 1,
+                            "lhsNodeUid": "93ec0fdb-80e9-4cac-9c8b-a57ea43696e6",
+                            "rhsNodeUid": "45812fd3-b039-452d-b0b2-9418df4d20c3"
+                        }
+                    ],
+                    "pinIndex": 1,
+                    "options": [
+                        16,
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "s1",
+                        "wires": {
+                            "1": {
+                                "sourceUUID": "373ef8e3-5143-4873-94df-379fe13d00b8",
+                                "destinationUUID": "1eb017ca-3c7b-4ece-b8b4-b6782e41b7c7",
+                                "sourceName": "concat5_out",
+                                "destinationName": "concat3_s1",
+                                "uuid": "9ada667e-f888-4c20-8b91-62de262f797b",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    },
+                    "currDataType": "StringPin"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "out",
+                    "package": "PyFlowBase",
+                    "fullName": "concat3_out",
+                    "dataType": "StringPin",
+                    "direction": 1,
+                    "value": "\";0:aaa;1:bbb\"",
+                    "uuid": "2c9e7d35-1610-4375-95a6-2999d4014cac",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "concat3",
+                            "outPinId": 1,
+                            "rhsNodeName": "setVar",
+                            "inPinId": 2,
+                            "lhsNodeUid": "45812fd3-b039-452d-b0b2-9418df4d20c3",
+                            "rhsNodeUid": "aaa08212-ab69-40e8-8326-d97247c3f020"
+                        }
+                    ],
+                    "pinIndex": 1,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "out",
+                        "wires": {
+                            "2": {
+                                "sourceUUID": "2c9e7d35-1610-4375-95a6-2999d4014cac",
+                                "destinationUUID": "59493dc1-4ca1-471c-a61f-fdf6bf9a9373",
+                                "sourceName": "concat3_out",
+                                "destinationName": "setVar_inp",
+                                "uuid": "0e2ae3d7-15ce-4716-988b-85ee8acff254",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                }
+            ],
+            "meta": {
+                "var": {},
+                "label": "concat3"
+            },
+            "wrapper": {
+                "collapsed": false,
+                "headerHtml": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\nhr { height: 1px; border-width: 0; }\nli.unchecked::marker { content: \"\\2610\"; }\nli.checked::marker { content: \"\\2612\"; }\n</style></head><body style=\" font-family:'Consolas'; font-size:6pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">concat3</p></body></html>",
+                "exposeInputsToCompound": false,
+                "groups": {
+                    "input": {},
+                    "output": {}
+                }
+            },
+            "x": 390.0,
+            "y": -190.0
+        },
+        {
+            "package": "PyFlowBase",
+            "lib": null,
+            "type": "getVar",
+            "owningGraphName": "root",
+            "name": "getVar4",
+            "uuid": "0dd4916b-2fe5-462c-9923-1876102aecb1",
+            "inputs": [],
+            "outputs": [
+                {
+                    "name": "out",
+                    "package": "PyFlowBase",
+                    "fullName": "getVar4_out",
+                    "dataType": "StringPin",
+                    "direction": 1,
+                    "value": "\";0:aaa\"",
+                    "uuid": "d253b900-903b-48f5-8492-b7bbf80b7cb8",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "getVar4",
+                            "outPinId": 1,
+                            "rhsNodeName": "concat5",
+                            "inPinId": 1,
+                            "lhsNodeUid": "0dd4916b-2fe5-462c-9923-1876102aecb1",
+                            "rhsNodeUid": "93ec0fdb-80e9-4cac-9c8b-a57ea43696e6"
+                        }
+                    ],
+                    "pinIndex": 1,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "out",
+                        "wires": {
+                            "1": {
+                                "sourceUUID": "d253b900-903b-48f5-8492-b7bbf80b7cb8",
+                                "destinationUUID": "5bdf928a-fd6a-4d72-a579-be4ad8dd81ee",
+                                "sourceName": "getVar4_out",
+                                "destinationName": "concat5_s1",
+                                "uuid": "14f70785-6a59-454a-bf95-9948334882d8",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                }
+            ],
+            "meta": {
+                "var": {},
+                "label": "getVar4"
+            },
+            "wrapper": {
+                "collapsed": false,
+                "headerHtml": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\nhr { height: 1px; border-width: 0; }\nli.unchecked::marker { content: \"\\2610\"; }\nli.checked::marker { content: \"\\2612\"; }\n</style></head><body style=\" font-family:'Consolas'; font-size:6pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Get result</p></body></html>",
+                "exposeInputsToCompound": false,
+                "groups": {
+                    "input": {},
+                    "output": {}
+                }
+            },
+            "x": 282.0,
+            "y": -290.0,
+            "varUid": "d79d3d3b-3144-4b6a-ba1a-8c8e7346e3e3"
+        },
+        {
+            "package": "PyFlowBase",
+            "lib": "StringLib",
+            "type": "concat",
+            "owningGraphName": "root",
+            "name": "concat5",
+            "uuid": "93ec0fdb-80e9-4cac-9c8b-a57ea43696e6",
+            "inputs": [
+                {
+                    "name": "s2",
+                    "package": "PyFlowBase",
+                    "fullName": "concat5_s2",
+                    "dataType": "AnyPin",
+                    "direction": 0,
+                    "value": "\";\"",
+                    "uuid": "f1bf06c7-6934-4dd3-9a80-3fde86743d7f",
+                    "linkedTo": [],
+                    "pinIndex": 2,
+                    "options": [
+                        16,
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "s2",
+                        "wires": {}
+                    },
+                    "currDataType": "StringPin"
+                },
+                {
+                    "name": "s1",
+                    "package": "PyFlowBase",
+                    "fullName": "concat5_s1",
+                    "dataType": "AnyPin",
+                    "direction": 0,
+                    "value": "\";0:aaa\"",
+                    "uuid": "5bdf928a-fd6a-4d72-a579-be4ad8dd81ee",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "getVar4",
+                            "outPinId": 1,
+                            "rhsNodeName": "concat5",
+                            "inPinId": 1,
+                            "lhsNodeUid": "0dd4916b-2fe5-462c-9923-1876102aecb1",
+                            "rhsNodeUid": "93ec0fdb-80e9-4cac-9c8b-a57ea43696e6"
+                        }
+                    ],
+                    "pinIndex": 1,
+                    "options": [
+                        16,
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "s1",
+                        "wires": {
+                            "1": {
+                                "sourceUUID": "d253b900-903b-48f5-8492-b7bbf80b7cb8",
+                                "destinationUUID": "5bdf928a-fd6a-4d72-a579-be4ad8dd81ee",
+                                "sourceName": "getVar4_out",
+                                "destinationName": "concat5_s1",
+                                "uuid": "14f70785-6a59-454a-bf95-9948334882d8",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    },
+                    "currDataType": "StringPin"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "out",
+                    "package": "PyFlowBase",
+                    "fullName": "concat5_out",
+                    "dataType": "StringPin",
+                    "direction": 1,
+                    "value": "\";0:aaa;\"",
+                    "uuid": "373ef8e3-5143-4873-94df-379fe13d00b8",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "concat5",
+                            "outPinId": 1,
+                            "rhsNodeName": "concat3",
+                            "inPinId": 1,
+                            "lhsNodeUid": "93ec0fdb-80e9-4cac-9c8b-a57ea43696e6",
+                            "rhsNodeUid": "45812fd3-b039-452d-b0b2-9418df4d20c3"
+                        }
+                    ],
+                    "pinIndex": 1,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "out",
+                        "wires": {
+                            "1": {
+                                "sourceUUID": "373ef8e3-5143-4873-94df-379fe13d00b8",
+                                "destinationUUID": "1eb017ca-3c7b-4ece-b8b4-b6782e41b7c7",
+                                "sourceName": "concat5_out",
+                                "destinationName": "concat3_s1",
+                                "uuid": "9ada667e-f888-4c20-8b91-62de262f797b",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                }
+            ],
+            "meta": {
+                "var": {},
+                "label": "concat5"
+            },
+            "wrapper": {
+                "collapsed": false,
+                "headerHtml": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\nhr { height: 1px; border-width: 0; }\nli.unchecked::marker { content: \"\\2610\"; }\nli.checked::marker { content: \"\\2612\"; }\n</style></head><body style=\" font-family:'Consolas'; font-size:6pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">concat5</p></body></html>",
+                "exposeInputsToCompound": false,
+                "groups": {
+                    "input": {},
+                    "output": {}
+                }
+            },
+            "x": 392.0,
+            "y": -274.0
+        },
+        {
+            "package": "PyFlowBase",
+            "lib": null,
+            "type": "setVar",
+            "owningGraphName": "root",
+            "name": "setVar",
+            "uuid": "aaa08212-ab69-40e8-8326-d97247c3f020",
+            "inputs": [
+                {
+                    "name": "inExec",
+                    "package": "PyFlowBase",
+                    "fullName": "setVar_inExec",
+                    "dataType": "ExecPin",
+                    "direction": 0,
+                    "value": "null",
+                    "uuid": "63566f8d-c286-4abe-a370-321a78c4c179",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "forEachRowDF",
+                            "outPinId": 1,
+                            "rhsNodeName": "setVar",
+                            "inPinId": 1,
+                            "lhsNodeUid": "26fecad4-75d3-4a9c-9911-e244fbfbf87b",
+                            "rhsNodeUid": "aaa08212-ab69-40e8-8326-d97247c3f020"
+                        }
+                    ],
+                    "pinIndex": 1,
+                    "options": [
+                        8,
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "inExec",
+                        "wires": {
+                            "1": {
+                                "sourceUUID": "b79a62a0-a78f-4b17-9e38-6e766346a779",
+                                "destinationUUID": "63566f8d-c286-4abe-a370-321a78c4c179",
+                                "sourceName": "forEachRowDF_loop_body",
+                                "destinationName": "setVar_inExec",
+                                "uuid": "0568a0c2-5e0c-4ff6-9be4-61779f3d212d",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "inp",
+                    "package": "PyFlowBase",
+                    "fullName": "setVar_inp",
+                    "dataType": "StringPin",
+                    "direction": 0,
+                    "value": "\";0:aaa;1:bbb\"",
+                    "uuid": "59493dc1-4ca1-471c-a61f-fdf6bf9a9373",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "concat3",
+                            "outPinId": 1,
+                            "rhsNodeName": "setVar",
+                            "inPinId": 2,
+                            "lhsNodeUid": "45812fd3-b039-452d-b0b2-9418df4d20c3",
+                            "rhsNodeUid": "aaa08212-ab69-40e8-8326-d97247c3f020"
+                        }
+                    ],
+                    "pinIndex": 2,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "inp",
+                        "wires": {
+                            "2": {
+                                "sourceUUID": "2c9e7d35-1610-4375-95a6-2999d4014cac",
+                                "destinationUUID": "59493dc1-4ca1-471c-a61f-fdf6bf9a9373",
+                                "sourceName": "concat3_out",
+                                "destinationName": "setVar_inp",
+                                "uuid": "0e2ae3d7-15ce-4716-988b-85ee8acff254",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "out",
+                    "package": "PyFlowBase",
+                    "fullName": "setVar_out",
+                    "dataType": "StringPin",
+                    "direction": 1,
+                    "value": "\";0:aaa;1:bbb\"",
+                    "uuid": "aa4d73fe-81c6-4782-ac04-bd092310ceb8",
+                    "linkedTo": [],
+                    "pinIndex": 2,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "out",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "outExec",
+                    "package": "PyFlowBase",
+                    "fullName": "setVar_outExec",
+                    "dataType": "ExecPin",
+                    "direction": 1,
+                    "value": "null",
+                    "uuid": "89841e64-a407-4a8e-ac7c-6e8c505c4168",
+                    "linkedTo": [],
+                    "pinIndex": 1,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "outExec",
+                        "wires": {}
+                    }
+                }
+            ],
+            "meta": {
+                "var": {},
+                "label": "setVar"
+            },
+            "wrapper": {
+                "collapsed": false,
+                "headerHtml": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\nhr { height: 1px; border-width: 0; }\nli.unchecked::marker { content: \"\\2610\"; }\nli.checked::marker { content: \"\\2612\"; }\n</style></head><body style=\" font-family:'Consolas'; font-size:6pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Set result</p></body></html>",
+                "exposeInputsToCompound": false,
+                "groups": {
+                    "input": {},
+                    "output": {}
+                }
+            },
+            "x": 574.0,
+            "y": -205.0,
+            "varUid": "d79d3d3b-3144-4b6a-ba1a-8c8e7346e3e3"
+        },
+        {
+            "package": "PyFlowBase",
+            "lib": null,
+            "type": "setVar",
+            "owningGraphName": "root",
+            "name": "setVar6",
+            "uuid": "13bedb5f-b8a7-4e8e-bfd5-37ed6b9a3d54",
+            "inputs": [
+                {
+                    "name": "inp",
+                    "package": "PyFlowBase",
+                    "fullName": "setVar6_inp",
+                    "dataType": "StringPin",
+                    "direction": 0,
+                    "value": "\"\"",
+                    "uuid": "62109f82-d06f-4fea-8a78-3ec551c43e68",
+                    "linkedTo": [],
+                    "pinIndex": 2,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "inp",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "inExec",
+                    "package": "PyFlowBase",
+                    "fullName": "setVar6_inExec",
+                    "dataType": "ExecPin",
+                    "direction": 0,
+                    "value": "null",
+                    "uuid": "69ff242d-1f44-427c-a8c0-e2e6d99879eb",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "GenericDBConn",
+                            "outPinId": 1,
+                            "rhsNodeName": "setVar6",
+                            "inPinId": 1,
+                            "lhsNodeUid": "797b5637-23bf-437c-bd40-1a0a33310ab4",
+                            "rhsNodeUid": "13bedb5f-b8a7-4e8e-bfd5-37ed6b9a3d54"
+                        }
+                    ],
+                    "pinIndex": 1,
+                    "options": [
+                        8,
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "inExec",
+                        "wires": {
+                            "1": {
+                                "sourceUUID": "95c77d07-092b-48d1-88de-9a1b7f2c9d95",
+                                "destinationUUID": "69ff242d-1f44-427c-a8c0-e2e6d99879eb",
+                                "sourceName": "GenericDBConn_outExec",
+                                "destinationName": "setVar6_inExec",
+                                "uuid": "036db554-040d-4eb1-a7d5-4734a9bbfa26",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "out",
+                    "package": "PyFlowBase",
+                    "fullName": "setVar6_out",
+                    "dataType": "StringPin",
+                    "direction": 1,
+                    "value": "\"\"",
+                    "uuid": "f99ccc70-9c93-492e-936b-bf61f0af83ad",
+                    "linkedTo": [],
+                    "pinIndex": 2,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "out",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "outExec",
+                    "package": "PyFlowBase",
+                    "fullName": "setVar6_outExec",
+                    "dataType": "ExecPin",
+                    "direction": 1,
+                    "value": "null",
+                    "uuid": "b8e3339c-4bd1-409e-97e7-2f9458f789b4",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "setVar6",
+                            "outPinId": 1,
+                            "rhsNodeName": "SQLQuery",
+                            "inPinId": 1,
+                            "lhsNodeUid": "13bedb5f-b8a7-4e8e-bfd5-37ed6b9a3d54",
+                            "rhsNodeUid": "0fba0a7d-5594-4dcb-904a-d2ff9e9a489f"
+                        }
+                    ],
+                    "pinIndex": 1,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "outExec",
+                        "wires": {
+                            "1": {
+                                "sourceUUID": "b8e3339c-4bd1-409e-97e7-2f9458f789b4",
+                                "destinationUUID": "438d338d-4c7f-4cfc-b2c0-a5f864f42f0d",
+                                "sourceName": "setVar6_outExec",
+                                "destinationName": "SQLQuery_query",
+                                "uuid": "2d2e57a9-02ad-4a96-a3bf-8d77505459cd",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                }
+            ],
+            "meta": {
+                "var": {},
+                "label": "setVar6"
+            },
+            "wrapper": {
+                "collapsed": false,
+                "headerHtml": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\nhr { height: 1px; border-width: 0; }\nli.unchecked::marker { content: \"\\2610\"; }\nli.checked::marker { content: \"\\2612\"; }\n</style></head><body style=\" font-family:'Consolas'; font-size:6pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Set result</p></body></html>",
+                "exposeInputsToCompound": false,
+                "groups": {
+                    "input": {},
+                    "output": {}
+                }
+            },
+            "x": -571.0,
+            "y": -331.0,
+            "varUid": "d79d3d3b-3144-4b6a-ba1a-8c8e7346e3e3"
+        }
+    ],
+    "depth": 1,
+    "isRoot": true,
+    "parentGraphName": "None",
+    "fileVersion": "3.0.0",
+    "activeGraph": "root"
+}

@@ -17,6 +17,10 @@ if TYPE_CHECKING:
 class PyCnvDBLib(ConverterBase):  # type: ignore
     """A converter class for the DBLib conversion"""
 
+    ############################
+    ### Database connections ###
+    ############################
+
     @staticmethod
     def SQLServerConn(exporter: 'PythonExporterImpl',
                  node: NodeBase,
@@ -61,3 +65,51 @@ class PyCnvDBLib(ConverterBase):  # type: ignore
                           f"connect_genericdb({', '.join(inpnames)})\n")
         exporter.set_node_processed(node)
         exporter.call_named_pin(node, 'outExec')
+
+
+    ####################
+    ### Data loaders ###
+    ####################
+
+    @staticmethod
+    def func_ReadCSV(exporter: 'PythonExporterImpl',
+                     node: NodeBase,
+                     *args, **kwargs):  # pylint: disable=unused-argument
+        """Convert ReadCSV nodes"""
+        exporter.add_import('pandas', alias='pd')
+        return "    return pd.read_csv(path, delimiter=delimiter, decimal=decimal)\n"
+
+
+    ############################
+    ###  Value helper nodes  ###
+    ############################
+
+    @staticmethod
+    def func_GetValue(exporter: 'PythonExporterImpl',
+                      node: NodeBase,
+                      *args, **kwargs):  # pylint: disable=unused-argument
+        """Convert GetValue nodes"""
+        exporter.add_import('pandas', alias='pd')
+        return """    if not isinstance(df, pd.DataFrame):
+        return None
+    return df.loc[to_locate][column]
+"""
+
+
+    @staticmethod
+    def call_GetSeriesValue(exporter: 'PythonExporterImpl',
+                            node: NodeBase,
+                            inpnames: list[str],  # pylint: disable=unused-argument
+                            *args, **kwargs):  # pylint: disable=unused-argument
+        """Convert GetSeriesValue nodes"""
+        return f"{exporter.get_out_list(node, post=' = ')}{inpnames[0]}[{inpnames[1]}]\n"
+
+
+    @staticmethod
+    def call_pdisnull(node: NodeBase,
+                      exporter: 'PythonExporterImpl',
+                      inpnames: list[str],  # pylint: disable=unused-argument
+                      *args, **kwargs):  # pylint: disable=unused-argument
+        """Convert pdisnull nodes"""
+        exporter.add_import('pandas', alias='pd')
+        return f"{exporter.get_out_list(node, post=' = ')}pd.isnull({inpnames[0]})\n"

@@ -1,8 +1,14 @@
-"""Database Tools Nodes"""
-from PyFlow.Core.Common import NodeTypes, NodeMeta
+"""Database Tools Nodes"""  # pylint: disable=invalid-name
+from PyFlow.Core.Common import NodeTypes, NodeMeta, PinSpecifiers, PinOptions
 from PyFlow.Core import FunctionLibraryBase, IMPLEMENT_NODE
 from sqlalchemy.engine import create_engine, URL
-from ..constants import DB_HEADER_COLOR
+
+from ..constants import DB_HEADER_COLOR, PDLIB_HEADER_COLOR
+
+# pylint: disable=wrong-import-order
+import pandas as pd
+# pylint: enable=wrong-import-order
+
 
 class DBLib(FunctionLibraryBase):
     """Database Tools Nodes FunctionLibrary"""
@@ -51,3 +57,77 @@ class DBLib(FunctionLibraryBase):
 
 
     # TODO: add other specific database connections
+
+    ####################
+    ### Data loaders ###
+    ####################
+
+    @staticmethod
+    @IMPLEMENT_NODE(returns=('DataFramePin', None,  # type: ignore
+                             {PinSpecifiers.DISABLED_OPTIONS: PinOptions.Storable}),
+                    nodeType=NodeTypes.Callable,
+                    meta={
+                        NodeMeta.CATEGORY: 'DatabaseTools|Pandas',
+                        NodeMeta.KEYWORDS: [],
+                        NodeMeta.HEADER_COLOR: PDLIB_HEADER_COLOR
+                    })
+    def ReadCSV(path=('StringPin', None),
+                delimiter=('StringPin', ';'),
+                decimal=('StringPin', '.')
+               ):
+        """Reads a CSV into a Pandas DataFrame"""
+        return  pd.read_csv(path, delimiter=delimiter, decimal=decimal)
+
+
+    ############################
+    ###  Value helper nodes  ###
+    ############################
+
+    @staticmethod
+    @IMPLEMENT_NODE(returns=('AnyPin', None),  # type: ignore
+                    nodeType=NodeTypes.Pure,
+                    meta={
+                        NodeMeta.CATEGORY: 'DatabaseTools|Pandas',
+                        NodeMeta.KEYWORDS: [],
+                        NodeMeta.HEADER_COLOR: PDLIB_HEADER_COLOR,
+                    })
+    def GetValue(df=('DataFramePin', None,
+                     { PinSpecifiers.DISABLED_OPTIONS: PinOptions.Storable }),
+                 to_locate=('AnyPin', '<value>'),
+                 column=('StringPin', '<columnname>')
+                ):
+        """Gets a value from Pandas DataFrame (locate by index field
+        and return value of a specific column)"""
+        if not isinstance(df, pd.DataFrame):
+            return None
+        return df.loc[to_locate][column]
+
+
+    @staticmethod
+    @IMPLEMENT_NODE(returns=('AnyPin', None),  # type: ignore
+                    nodeType=NodeTypes.Pure,
+                    meta={
+                        NodeMeta.CATEGORY: 'DatabaseTools|Pandas',
+                        NodeMeta.KEYWORDS: [],
+                        NodeMeta.HEADER_COLOR: PDLIB_HEADER_COLOR,
+                    })
+    def GetSeriesValue(series=('SeriesPin', None,
+                               { PinSpecifiers.DISABLED_OPTIONS: PinOptions.Storable }),
+                       to_locate=('AnyPin', '<value|columnname>')):
+        """Gets a value from Pandas Series (locate by index field)"""
+        if not isinstance(series, pd.Series):
+            return None
+        return series.loc[to_locate]
+
+
+    @staticmethod
+    @IMPLEMENT_NODE(returns=('BoolPin', False),  # type: ignore
+                    nodeType=NodeTypes.Pure,
+                    meta={
+                        NodeMeta.CATEGORY: 'DatabaseTools|Pandas',
+                        NodeMeta.KEYWORDS: [],
+                        NodeMeta.HEADER_COLOR: PDLIB_HEADER_COLOR,
+                    })
+    def pdisnull(value=('AnyPin', None)):
+        """Returns pandas.isnull() for the value"""
+        return pd.isnull(value)

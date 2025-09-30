@@ -15,6 +15,12 @@ from tests import testhelper  # pylint: disable=import-error
                 [[1, 'aaa']], columns=['id', 'name'])),
             ('SQLQuery3_result', pd.DataFrame(
                 [[1, 'aaa']], columns=['id', 'name'])),
+        ]),
+        ('sqlite_002_getvalue', 'GenericDBConn_inExec', [
+            ('GetValue_out', 'aaa')
+        ]),
+        ('sqlite_003_foreachrowdf', 'GenericDBConn_inExec', [
+            ('getVar_out', ';0:aaa;1:bbb')
         ])
     ]
 )
@@ -44,6 +50,12 @@ def test_sqlite_graph(pycnv, testfolder, test_name, exec_pin, result_pins_with_e
                 [[1, 'aaa']], columns=['id', 'name'])),
             ('SQLQuery3_result', pd.DataFrame(
                 [[1, 'aaa']], columns=['id', 'name'])),
+        ]),
+        ('sqlite_002_getvalue', [
+            ('GetValue_out', 'aaa')
+        ]),
+        ('sqlite_003_foreachrowdf', [
+            ('getVar_out', ';0:aaa;1:bbb')
         ])
     ]
 )
