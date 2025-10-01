@@ -16,7 +16,6 @@ VARS = {}
 # ================================ PACKAGE IMPORTS ================================
 # pylint: disable=wrong-import-position
 from sqlalchemy import (create_engine,
-                        URL,
                         text)
 import pandas as pd
 import re

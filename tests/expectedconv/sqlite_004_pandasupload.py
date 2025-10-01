@@ -16,7 +16,6 @@ VARS = {}
 # ================================ PACKAGE IMPORTS ================================
 # pylint: disable=wrong-import-position
 from sqlalchemy import (create_engine,
-                        URL,
                         text)
 import pandas as pd
 import re
@@ -60,7 +59,7 @@ def queryDatabase(conn, sql, has_result, param_dict={}, **kwargs):
 
 def uploadPandas(conn, df, tablename, with_index, if_exists):
     if not with_index:
-        df = df.reset_index()
+        df = df.reset_index(drop=True)
     df.to_sql(tablename, conn, method='multi', index=with_index, if_exists=if_exists)
 
 
@@ -77,6 +76,6 @@ GenericDBConn_out = connect_genericdb('sqlite:///tests/temp/db.sdb')
 SQLQuery_result = queryDatabase(GenericDBConn_out, """select 1 as id, 'aaa' as name
                                                       union all
                                                       select 2 as id, 'bbb' as name""", True)
-uploadPandas(GenericDBConn_out, SQLQuery_result, 'temptable', False, 'fail')
+uploadPandas(GenericDBConn_out, SQLQuery_result, 'temptable', False, 'replace')
 SQLQuery1_result = queryDatabase(GenericDBConn_out, """select * from temptable;""", True)
 print(SQLQuery1_result)

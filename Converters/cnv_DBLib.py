@@ -56,7 +56,7 @@ class PyCnvDBLib(ConverterBase):  # type: ignore
                       *args, **kwargs):  # pylint: disable=unused-argument
         """Convert GenericDBConn node type"""
         if not exporter.is_node_function_processed(node):
-            exporter.add_import('sqlalchemy', imports=['create_engine', 'URL'])
+            exporter.add_import('sqlalchemy', imports=['create_engine'])
             exporter.add_sys_function("""def connect_genericdb(connection_url):
     \"\"\"Connect to a generic database according to the connection url\"\"\"
     engine = create_engine(connection_url)
