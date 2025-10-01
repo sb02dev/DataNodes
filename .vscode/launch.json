@@ -10,7 +10,7 @@
             "request": "launch",
             "args": [
                 "-f",
-                "tests/graphs/sqlite_003_foreachrowdf.pygraph"
+                "tests/graphs/sqlite_007_sqlparam.pygraph"
             ],
             "program": "E:/dev/projects/pyflowdev/PyFlow/pyflow.py",
             "console": "integratedTerminal"

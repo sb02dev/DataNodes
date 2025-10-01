@@ -26,6 +26,18 @@ from tests import testhelper  # pylint: disable=import-error
             ('SQLQuery1_result', pd.DataFrame(
                 [[1, 'aaa'], [2, 'bbb']], columns=['id', 'name'])),
         ]),
+        ('sqlite_005_pandassql', 'GenericDBConn_inExec', [
+            ('PandasSQLQuery_result', pd.DataFrame(
+                [[2]], columns=['count(*)'])),
+        ]),
+        ('sqlite_006_pandassqlparam', 'GenericDBConn_inExec', [
+            ('PandasSQLQuery_result', pd.DataFrame(
+                [[1, 'aaa']], columns=['id', 'name'])),
+        ]),
+        ('sqlite_007_sqlparam', 'GenericDBConn_inExec', [
+            ('SQLQuery1_result', pd.DataFrame(
+                [[1, 'aaa']], columns=['id', 'name'])),
+        ]),
     ]
 )
 def test_sqlite_graph(pycnv, testfolder, test_name, exec_pin, result_pins_with_expected):
@@ -64,6 +76,18 @@ def test_sqlite_graph(pycnv, testfolder, test_name, exec_pin, result_pins_with_e
         ('sqlite_004_pandasupload', [
             ('SQLQuery1_result', pd.DataFrame(
                 [[1, 'aaa'], [2, 'bbb']], columns=['id', 'name'])),
+        ]),
+        ('sqlite_005_pandassql', [
+            ('PandasSQLQuery_result', pd.DataFrame(
+                [[2]], columns=['count(*)'])),
+        ]),
+        ('sqlite_006_pandassqlparam', [
+            ('PandasSQLQuery_result', pd.DataFrame(
+                [[1, 'aaa']], columns=['id', 'name'])),
+        ]),
+        ('sqlite_007_sqlparam', [
+            ('SQLQuery1_result', pd.DataFrame(
+                [[1, 'aaa']], columns=['id', 'name'])),
         ]),
     ]
 )
