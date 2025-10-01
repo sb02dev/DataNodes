@@ -2,6 +2,7 @@
 from typing import TYPE_CHECKING
 
 from PyFlow.Core import NodeBase
+from PyFlow.Core.Common import DEFAULT_OUT_EXEC_NAME
 
 try:
     from PyFlow.Packages.PythonExporter.Exporters.converter_base import (  # pylint: disable=import-error, no-name-in-module # type: ignore
@@ -70,6 +71,31 @@ class PyCnvDBLib(ConverterBase):  # type: ignore
     ####################
     ### Data loaders ###
     ####################
+
+    @staticmethod
+    def PandasUpload(exporter: 'PythonExporterImpl',
+                     node: NodeBase,
+                     inpnames: list[str],  # pylint: disable=unused-argument
+                     *args, **kwargs):  # pylint: disable=unused-argument
+        """Convert PandasUpload nodes"""
+        # export function definition
+        if not exporter.is_node_function_processed(node):
+            exporter.add_sys_function(
+"""def uploadPandas(conn, df, tablename, with_index, if_exists):
+    if not with_index:
+        df = df.reset_index(drop=True)
+    df.to_sql(tablename, conn, method='multi', index=with_index, if_exists=if_exists)
+""")
+            exporter.set_node_function_processed(node)
+        exporter.add_call(
+            f"{exporter.get_out_list(node, post=' = ')}uploadPandas({', '.join(inpnames)})\n"
+        )
+        exporter.call_named_pin(node, DEFAULT_OUT_EXEC_NAME)
+
+
+    #########################
+    ### Data manipulation ###
+    #########################
 
     @staticmethod
     def func_ReadCSV(exporter: 'PythonExporterImpl',

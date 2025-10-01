@@ -21,7 +21,11 @@ from tests import testhelper  # pylint: disable=import-error
         ]),
         ('sqlite_003_foreachrowdf', 'GenericDBConn_inExec', [
             ('getVar_out', ';0:aaa;1:bbb')
-        ])
+        ]),
+        ('sqlite_004_pandasupload', 'GenericDBConn_inExec', [
+            ('SQLQuery1_result', pd.DataFrame(
+                [[1, 'aaa'], [2, 'bbb']], columns=['id', 'name'])),
+        ]),
     ]
 )
 def test_sqlite_graph(pycnv, testfolder, test_name, exec_pin, result_pins_with_expected):
@@ -56,7 +60,11 @@ def test_sqlite_graph(pycnv, testfolder, test_name, exec_pin, result_pins_with_e
         ]),
         ('sqlite_003_foreachrowdf', [
             ('getVar_out', ';0:aaa;1:bbb')
-        ])
+        ]),
+        ('sqlite_004_pandasupload', [
+            ('SQLQuery1_result', pd.DataFrame(
+                [[1, 'aaa'], [2, 'bbb']], columns=['id', 'name'])),
+        ]),
     ]
 )
 def test_sqlite_cnv(pycnv, testfolder, test_name, result_pins_with_expected):

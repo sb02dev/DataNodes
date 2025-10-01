@@ -76,7 +76,32 @@ class DBLib(FunctionLibraryBase):
                 decimal=('StringPin', '.')
                ):
         """Reads a CSV into a Pandas DataFrame"""
-        return  pd.read_csv(path, delimiter=delimiter, decimal=decimal)
+        return pd.read_csv(path, delimiter=delimiter, decimal=decimal)
+
+
+    #########################
+    ### Data manipulation ###
+    #########################
+
+    @staticmethod
+    @IMPLEMENT_NODE(returns=None,  # type: ignore
+                    nodeType=NodeTypes.Callable,
+                    meta={
+                        NodeMeta.CATEGORY: 'DatabaseTools|Server',
+                        NodeMeta.KEYWORDS: [],
+                        NodeMeta.HEADER_COLOR: PDLIB_HEADER_COLOR
+                    })
+    def PandasUpload(conn=('DBEnginePin', None),
+                     df=('DataFramePin', None),
+                     tablename=('StringPin', '#temptable'),
+                     with_index=('BoolPin', False),
+                     if_exists=('StringPin', 'fail', { PinSpecifiers.VALUE_LIST: ['fail', 'replace', 'append'] })
+               ):
+        """Uploads a Pandas DataFrame to a database
+        Note #1: prefix table name with # for MSSQL to upload a temporary table"""
+        if not with_index:
+            df = df.reset_index(drop=True)
+        df.to_sql(tablename, conn, method='multi', index=with_index, if_exists=if_exists)
 
 
     ############################

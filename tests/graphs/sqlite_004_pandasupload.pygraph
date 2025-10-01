@@ -1,0 +1,1206 @@
+{
+    "name": "root",
+    "category": "",
+    "vars": [],
+    "nodes": [
+        {
+            "package": "DataNodes",
+            "lib": "DBLib",
+            "type": "GenericDBConn",
+            "owningGraphName": "root",
+            "name": "GenericDBConn",
+            "uuid": "797b5637-23bf-437c-bd40-1a0a33310ab4",
+            "inputs": [
+                {
+                    "name": "connection_url",
+                    "package": "PyFlowBase",
+                    "fullName": "GenericDBConn_connection_url",
+                    "dataType": "StringPin",
+                    "direction": 0,
+                    "value": "\"sqlite:///tests/temp/db.sdb\"",
+                    "uuid": "10454892-73dd-41c1-b0dd-ffb259806d43",
+                    "linkedTo": [],
+                    "pinIndex": 2,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "connection_url",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "inExec",
+                    "package": "PyFlowBase",
+                    "fullName": "GenericDBConn_inExec",
+                    "dataType": "ExecPin",
+                    "direction": 0,
+                    "value": "null",
+                    "uuid": "609c4e96-56de-4c03-9bac-efecca603fe2",
+                    "linkedTo": [],
+                    "pinIndex": 1,
+                    "options": [
+                        8,
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "inExec",
+                        "wires": {}
+                    }
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "outExec",
+                    "package": "PyFlowBase",
+                    "fullName": "GenericDBConn_outExec",
+                    "dataType": "ExecPin",
+                    "direction": 1,
+                    "value": "null",
+                    "uuid": "95c77d07-092b-48d1-88de-9a1b7f2c9d95",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "GenericDBConn",
+                            "outPinId": 1,
+                            "rhsNodeName": "SQLQuery",
+                            "inPinId": 1,
+                            "lhsNodeUid": "797b5637-23bf-437c-bd40-1a0a33310ab4",
+                            "rhsNodeUid": "0fba0a7d-5594-4dcb-904a-d2ff9e9a489f"
+                        }
+                    ],
+                    "pinIndex": 1,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "outExec",
+                        "wires": {
+                            "1": {
+                                "sourceUUID": "95c77d07-092b-48d1-88de-9a1b7f2c9d95",
+                                "destinationUUID": "438d338d-4c7f-4cfc-b2c0-a5f864f42f0d",
+                                "sourceName": "GenericDBConn_outExec",
+                                "destinationName": "SQLQuery_query",
+                                "uuid": "aaf6a852-02db-44f6-8d43-9041ecd94cbf",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "out",
+                    "package": "DataNodes",
+                    "fullName": "GenericDBConn_out",
+                    "dataType": "DBEnginePin",
+                    "direction": 1,
+                    "value": null,
+                    "uuid": "eff485ce-a32c-4dd7-bc36-173fc7c50659",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "GenericDBConn",
+                            "outPinId": 2,
+                            "rhsNodeName": "SQLQuery",
+                            "inPinId": 2,
+                            "lhsNodeUid": "797b5637-23bf-437c-bd40-1a0a33310ab4",
+                            "rhsNodeUid": "0fba0a7d-5594-4dcb-904a-d2ff9e9a489f"
+                        },
+                        {
+                            "lhsNodeName": "GenericDBConn",
+                            "outPinId": 2,
+                            "rhsNodeName": "SQLQuery1",
+                            "inPinId": 2,
+                            "lhsNodeUid": "797b5637-23bf-437c-bd40-1a0a33310ab4",
+                            "rhsNodeUid": "c9aeaefa-b45f-4190-99f7-99f72a574017"
+                        },
+                        {
+                            "lhsNodeName": "GenericDBConn",
+                            "outPinId": 2,
+                            "rhsNodeName": "PandasUpload",
+                            "inPinId": 2,
+                            "lhsNodeUid": "797b5637-23bf-437c-bd40-1a0a33310ab4",
+                            "rhsNodeUid": "3aa01704-2701-414c-8a66-b0b8d7eab2ad"
+                        }
+                    ],
+                    "pinIndex": 2,
+                    "options": [],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "out",
+                        "wires": {
+                            "2": {
+                                "sourceUUID": "eff485ce-a32c-4dd7-bc36-173fc7c50659",
+                                "destinationUUID": "c4fb4d9e-712e-4da4-8c95-be1b080c97a1",
+                                "sourceName": "GenericDBConn_out",
+                                "destinationName": "PandasUpload_conn",
+                                "uuid": "c8a5fde4-5a11-4bfe-bd48-5dfdeb237725",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                }
+            ],
+            "meta": {
+                "var": {},
+                "label": "GenericDBConn"
+            },
+            "wrapper": {
+                "collapsed": false,
+                "headerHtml": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\nhr { height: 1px; border-width: 0; }\nli.unchecked::marker { content: \"\\2610\"; }\nli.checked::marker { content: \"\\2612\"; }\n</style></head><body style=\" font-family:'Consolas'; font-size:6pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">GenericDBConn</p></body></html>",
+                "exposeInputsToCompound": false,
+                "groups": {
+                    "input": {},
+                    "output": {}
+                }
+            },
+            "x": -738.0,
+            "y": -296.0
+        },
+        {
+            "package": "DataNodes",
+            "lib": null,
+            "type": "SQLQuery",
+            "owningGraphName": "root",
+            "name": "SQLQuery",
+            "uuid": "0fba0a7d-5594-4dcb-904a-d2ff9e9a489f",
+            "inputs": [
+                {
+                    "name": "conn",
+                    "package": "DataNodes",
+                    "fullName": "SQLQuery_conn",
+                    "dataType": "DBEnginePin",
+                    "direction": 0,
+                    "value": null,
+                    "uuid": "a40652c0-bbfa-452a-a237-fae91632da06",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "GenericDBConn",
+                            "outPinId": 2,
+                            "rhsNodeName": "SQLQuery",
+                            "inPinId": 2,
+                            "lhsNodeUid": "797b5637-23bf-437c-bd40-1a0a33310ab4",
+                            "rhsNodeUid": "0fba0a7d-5594-4dcb-904a-d2ff9e9a489f"
+                        }
+                    ],
+                    "pinIndex": 2,
+                    "options": [],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "conn",
+                        "wires": {
+                            "2": {
+                                "sourceUUID": "eff485ce-a32c-4dd7-bc36-173fc7c50659",
+                                "destinationUUID": "a40652c0-bbfa-452a-a237-fae91632da06",
+                                "sourceName": "GenericDBConn_out",
+                                "destinationName": "SQLQuery_conn",
+                                "uuid": "bc24f57e-23ba-411f-9dcd-3a5130e5da90",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "param_dict",
+                    "package": "PyFlowBase",
+                    "fullName": "SQLQuery_param_dict",
+                    "dataType": "AnyPin",
+                    "direction": 0,
+                    "value": null,
+                    "uuid": "3d9a9b37-9e71-4705-b629-e174bdef04d5",
+                    "linkedTo": [],
+                    "pinIndex": 5,
+                    "options": [
+                        4,
+                        16,
+                        256,
+                        512
+                    ],
+                    "structure": 2,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": true,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "param_dict",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "sql",
+                    "package": "PyFlowBase",
+                    "fullName": "SQLQuery_sql",
+                    "dataType": "StringPin",
+                    "direction": 0,
+                    "value": "\"select 1 as id, 'aaa' as name\\nunion all\\nselect 2 as id, 'bbb' as name\"",
+                    "uuid": "ec25899b-af61-4d6b-b821-58fc7cb05598",
+                    "linkedTo": [],
+                    "pinIndex": 3,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "sql",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "has_result",
+                    "package": "PyFlowBase",
+                    "fullName": "SQLQuery_has_result",
+                    "dataType": "BoolPin",
+                    "direction": 0,
+                    "value": "true",
+                    "uuid": "f57904b3-87a2-48e4-b16c-ddc9e5cc0dd3",
+                    "linkedTo": [],
+                    "pinIndex": 4,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "has_result",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "query",
+                    "package": "PyFlowBase",
+                    "fullName": "SQLQuery_query",
+                    "dataType": "ExecPin",
+                    "direction": 0,
+                    "value": "null",
+                    "uuid": "438d338d-4c7f-4cfc-b2c0-a5f864f42f0d",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "GenericDBConn",
+                            "outPinId": 1,
+                            "rhsNodeName": "SQLQuery",
+                            "inPinId": 1,
+                            "lhsNodeUid": "797b5637-23bf-437c-bd40-1a0a33310ab4",
+                            "rhsNodeUid": "0fba0a7d-5594-4dcb-904a-d2ff9e9a489f"
+                        }
+                    ],
+                    "pinIndex": 1,
+                    "options": [
+                        8,
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "query",
+                        "wires": {
+                            "1": {
+                                "sourceUUID": "95c77d07-092b-48d1-88de-9a1b7f2c9d95",
+                                "destinationUUID": "438d338d-4c7f-4cfc-b2c0-a5f864f42f0d",
+                                "sourceName": "GenericDBConn_outExec",
+                                "destinationName": "SQLQuery_query",
+                                "uuid": "aaf6a852-02db-44f6-8d43-9041ecd94cbf",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "completed",
+                    "package": "PyFlowBase",
+                    "fullName": "SQLQuery_completed",
+                    "dataType": "ExecPin",
+                    "direction": 1,
+                    "value": "null",
+                    "uuid": "1445c00a-0781-47dd-b614-e14860958a82",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "SQLQuery",
+                            "outPinId": 1,
+                            "rhsNodeName": "PandasUpload",
+                            "inPinId": 1,
+                            "lhsNodeUid": "0fba0a7d-5594-4dcb-904a-d2ff9e9a489f",
+                            "rhsNodeUid": "3aa01704-2701-414c-8a66-b0b8d7eab2ad"
+                        }
+                    ],
+                    "pinIndex": 1,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "completed",
+                        "wires": {
+                            "1": {
+                                "sourceUUID": "1445c00a-0781-47dd-b614-e14860958a82",
+                                "destinationUUID": "e6121b5c-4755-4cf2-a9d4-5dbed2b2ae77",
+                                "sourceName": "SQLQuery_completed",
+                                "destinationName": "PandasUpload_inExec",
+                                "uuid": "764b02c0-336f-42e4-a6d0-69c2fe648d63",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "result",
+                    "package": "DataNodes",
+                    "fullName": "SQLQuery_result",
+                    "dataType": "DataFramePin",
+                    "direction": 1,
+                    "value": null,
+                    "uuid": "43e394e1-3f60-4211-9b53-5efc0e1c5214",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "SQLQuery",
+                            "outPinId": 2,
+                            "rhsNodeName": "PandasUpload",
+                            "inPinId": 3,
+                            "lhsNodeUid": "0fba0a7d-5594-4dcb-904a-d2ff9e9a489f",
+                            "rhsNodeUid": "3aa01704-2701-414c-8a66-b0b8d7eab2ad"
+                        }
+                    ],
+                    "pinIndex": 2,
+                    "options": [],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "result",
+                        "wires": {
+                            "3": {
+                                "sourceUUID": "43e394e1-3f60-4211-9b53-5efc0e1c5214",
+                                "destinationUUID": "49a3e53f-bcda-4d9e-aa39-565e6a3f1b2d",
+                                "sourceName": "SQLQuery_result",
+                                "destinationName": "PandasUpload_df",
+                                "uuid": "1ee5f1a3-a79e-4bf6-9812-c2a23dd37208",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                }
+            ],
+            "meta": {
+                "var": {},
+                "label": "SQLQuery"
+            },
+            "wrapper": {
+                "collapsed": false,
+                "headerHtml": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\nhr { height: 1px; border-width: 0; }\nli.unchecked::marker { content: \"\\2610\"; }\nli.checked::marker { content: \"\\2612\"; }\n</style></head><body style=\" font-family:'Consolas'; font-size:6pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">SQLQuery</p></body></html>",
+                "exposeInputsToCompound": false,
+                "groups": {
+                    "input": {},
+                    "output": {}
+                }
+            },
+            "x": -523.0,
+            "y": -296.0
+        },
+        {
+            "package": "DataNodes",
+            "lib": "DBLib",
+            "type": "PandasUpload",
+            "owningGraphName": "root",
+            "name": "PandasUpload",
+            "uuid": "3aa01704-2701-414c-8a66-b0b8d7eab2ad",
+            "inputs": [
+                {
+                    "name": "with_index",
+                    "package": "PyFlowBase",
+                    "fullName": "PandasUpload_with_index",
+                    "dataType": "BoolPin",
+                    "direction": 0,
+                    "value": "false",
+                    "uuid": "bef984f3-dfe1-4631-9a41-6f614a923382",
+                    "linkedTo": [],
+                    "pinIndex": 5,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "with_index",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "tablename",
+                    "package": "PyFlowBase",
+                    "fullName": "PandasUpload_tablename",
+                    "dataType": "StringPin",
+                    "direction": 0,
+                    "value": "\"temptable\"",
+                    "uuid": "6f34b6e5-cc30-4508-bea6-ec49419064dd",
+                    "linkedTo": [],
+                    "pinIndex": 4,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "tablename",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "df",
+                    "package": "DataNodes",
+                    "fullName": "PandasUpload_df",
+                    "dataType": "DataFramePin",
+                    "direction": 0,
+                    "value": null,
+                    "uuid": "49a3e53f-bcda-4d9e-aa39-565e6a3f1b2d",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "SQLQuery",
+                            "outPinId": 2,
+                            "rhsNodeName": "PandasUpload",
+                            "inPinId": 3,
+                            "lhsNodeUid": "0fba0a7d-5594-4dcb-904a-d2ff9e9a489f",
+                            "rhsNodeUid": "3aa01704-2701-414c-8a66-b0b8d7eab2ad"
+                        }
+                    ],
+                    "pinIndex": 3,
+                    "options": [],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "df",
+                        "wires": {
+                            "3": {
+                                "sourceUUID": "43e394e1-3f60-4211-9b53-5efc0e1c5214",
+                                "destinationUUID": "49a3e53f-bcda-4d9e-aa39-565e6a3f1b2d",
+                                "sourceName": "SQLQuery_result",
+                                "destinationName": "PandasUpload_df",
+                                "uuid": "1ee5f1a3-a79e-4bf6-9812-c2a23dd37208",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "inExec",
+                    "package": "PyFlowBase",
+                    "fullName": "PandasUpload_inExec",
+                    "dataType": "ExecPin",
+                    "direction": 0,
+                    "value": "null",
+                    "uuid": "e6121b5c-4755-4cf2-a9d4-5dbed2b2ae77",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "SQLQuery",
+                            "outPinId": 1,
+                            "rhsNodeName": "PandasUpload",
+                            "inPinId": 1,
+                            "lhsNodeUid": "0fba0a7d-5594-4dcb-904a-d2ff9e9a489f",
+                            "rhsNodeUid": "3aa01704-2701-414c-8a66-b0b8d7eab2ad"
+                        }
+                    ],
+                    "pinIndex": 1,
+                    "options": [
+                        8,
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "inExec",
+                        "wires": {
+                            "1": {
+                                "sourceUUID": "1445c00a-0781-47dd-b614-e14860958a82",
+                                "destinationUUID": "e6121b5c-4755-4cf2-a9d4-5dbed2b2ae77",
+                                "sourceName": "SQLQuery_completed",
+                                "destinationName": "PandasUpload_inExec",
+                                "uuid": "764b02c0-336f-42e4-a6d0-69c2fe648d63",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "conn",
+                    "package": "DataNodes",
+                    "fullName": "PandasUpload_conn",
+                    "dataType": "DBEnginePin",
+                    "direction": 0,
+                    "value": null,
+                    "uuid": "c4fb4d9e-712e-4da4-8c95-be1b080c97a1",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "GenericDBConn",
+                            "outPinId": 2,
+                            "rhsNodeName": "PandasUpload",
+                            "inPinId": 2,
+                            "lhsNodeUid": "797b5637-23bf-437c-bd40-1a0a33310ab4",
+                            "rhsNodeUid": "3aa01704-2701-414c-8a66-b0b8d7eab2ad"
+                        }
+                    ],
+                    "pinIndex": 2,
+                    "options": [],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "conn",
+                        "wires": {
+                            "2": {
+                                "sourceUUID": "eff485ce-a32c-4dd7-bc36-173fc7c50659",
+                                "destinationUUID": "c4fb4d9e-712e-4da4-8c95-be1b080c97a1",
+                                "sourceName": "GenericDBConn_out",
+                                "destinationName": "PandasUpload_conn",
+                                "uuid": "c8a5fde4-5a11-4bfe-bd48-5dfdeb237725",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "if_exists",
+                    "package": "PyFlowBase",
+                    "fullName": "PandasUpload_if_exists",
+                    "dataType": "StringPin",
+                    "direction": 0,
+                    "value": "\"replace\"",
+                    "uuid": "ff4fca86-1c10-4192-ae32-dde2d1748026",
+                    "linkedTo": [],
+                    "pinIndex": 6,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "if_exists",
+                        "wires": {}
+                    }
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "outExec",
+                    "package": "PyFlowBase",
+                    "fullName": "PandasUpload_outExec",
+                    "dataType": "ExecPin",
+                    "direction": 1,
+                    "value": "null",
+                    "uuid": "1280b8a4-13b8-4053-a3a5-1ef53b44b36f",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "PandasUpload",
+                            "outPinId": 1,
+                            "rhsNodeName": "SQLQuery1",
+                            "inPinId": 1,
+                            "lhsNodeUid": "3aa01704-2701-414c-8a66-b0b8d7eab2ad",
+                            "rhsNodeUid": "c9aeaefa-b45f-4190-99f7-99f72a574017"
+                        }
+                    ],
+                    "pinIndex": 1,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "outExec",
+                        "wires": {
+                            "1": {
+                                "sourceUUID": "1280b8a4-13b8-4053-a3a5-1ef53b44b36f",
+                                "destinationUUID": "b96c1ecc-abfe-47fb-b575-0cca644fddf7",
+                                "sourceName": "PandasUpload_outExec",
+                                "destinationName": "SQLQuery1_query",
+                                "uuid": "9f71ac73-db8d-4afe-888e-260bf1a7e121",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                }
+            ],
+            "meta": {
+                "var": {},
+                "label": "PandasUpload"
+            },
+            "wrapper": {
+                "collapsed": false,
+                "headerHtml": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\nhr { height: 1px; border-width: 0; }\nli.unchecked::marker { content: \"\\2610\"; }\nli.checked::marker { content: \"\\2612\"; }\n</style></head><body style=\" font-family:'Consolas'; font-size:6pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">PandasUpload</p></body></html>",
+                "exposeInputsToCompound": false,
+                "groups": {
+                    "input": {},
+                    "output": {}
+                }
+            },
+            "x": -324.0,
+            "y": -310.0
+        },
+        {
+            "package": "DataNodes",
+            "lib": null,
+            "type": "SQLQuery",
+            "owningGraphName": "root",
+            "name": "SQLQuery1",
+            "uuid": "c9aeaefa-b45f-4190-99f7-99f72a574017",
+            "inputs": [
+                {
+                    "name": "sql",
+                    "package": "PyFlowBase",
+                    "fullName": "SQLQuery1_sql",
+                    "dataType": "StringPin",
+                    "direction": 0,
+                    "value": "\"select * from temptable;\"",
+                    "uuid": "b6f21744-f9c5-47d0-a435-100e1a56a2a9",
+                    "linkedTo": [],
+                    "pinIndex": 3,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "sql",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "has_result",
+                    "package": "PyFlowBase",
+                    "fullName": "SQLQuery1_has_result",
+                    "dataType": "BoolPin",
+                    "direction": 0,
+                    "value": "true",
+                    "uuid": "48db7fec-01c5-4683-a4bd-0844ee00d0b2",
+                    "linkedTo": [],
+                    "pinIndex": 4,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "has_result",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "param_dict",
+                    "package": "PyFlowBase",
+                    "fullName": "SQLQuery1_param_dict",
+                    "dataType": "AnyPin",
+                    "direction": 0,
+                    "value": null,
+                    "uuid": "2e730a95-0733-4b83-9512-565317c8d180",
+                    "linkedTo": [],
+                    "pinIndex": 5,
+                    "options": [
+                        4,
+                        16,
+                        256,
+                        512
+                    ],
+                    "structure": 2,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": true,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "param_dict",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "query",
+                    "package": "PyFlowBase",
+                    "fullName": "SQLQuery1_query",
+                    "dataType": "ExecPin",
+                    "direction": 0,
+                    "value": "null",
+                    "uuid": "b96c1ecc-abfe-47fb-b575-0cca644fddf7",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "PandasUpload",
+                            "outPinId": 1,
+                            "rhsNodeName": "SQLQuery1",
+                            "inPinId": 1,
+                            "lhsNodeUid": "3aa01704-2701-414c-8a66-b0b8d7eab2ad",
+                            "rhsNodeUid": "c9aeaefa-b45f-4190-99f7-99f72a574017"
+                        }
+                    ],
+                    "pinIndex": 1,
+                    "options": [
+                        8,
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "query",
+                        "wires": {
+                            "1": {
+                                "sourceUUID": "1280b8a4-13b8-4053-a3a5-1ef53b44b36f",
+                                "destinationUUID": "b96c1ecc-abfe-47fb-b575-0cca644fddf7",
+                                "sourceName": "PandasUpload_outExec",
+                                "destinationName": "SQLQuery1_query",
+                                "uuid": "9f71ac73-db8d-4afe-888e-260bf1a7e121",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "conn",
+                    "package": "DataNodes",
+                    "fullName": "SQLQuery1_conn",
+                    "dataType": "DBEnginePin",
+                    "direction": 0,
+                    "value": null,
+                    "uuid": "9833347d-3141-429a-ad1a-f21b32e87afc",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "GenericDBConn",
+                            "outPinId": 2,
+                            "rhsNodeName": "SQLQuery1",
+                            "inPinId": 2,
+                            "lhsNodeUid": "797b5637-23bf-437c-bd40-1a0a33310ab4",
+                            "rhsNodeUid": "c9aeaefa-b45f-4190-99f7-99f72a574017"
+                        }
+                    ],
+                    "pinIndex": 2,
+                    "options": [],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "conn",
+                        "wires": {
+                            "2": {
+                                "sourceUUID": "eff485ce-a32c-4dd7-bc36-173fc7c50659",
+                                "destinationUUID": "9833347d-3141-429a-ad1a-f21b32e87afc",
+                                "sourceName": "GenericDBConn_out",
+                                "destinationName": "SQLQuery1_conn",
+                                "uuid": "cf94e3bf-10d9-42b1-96ec-93f449f3d14d",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "completed",
+                    "package": "PyFlowBase",
+                    "fullName": "SQLQuery1_completed",
+                    "dataType": "ExecPin",
+                    "direction": 1,
+                    "value": "null",
+                    "uuid": "ec840ce1-ac4f-4c91-babc-1d92e4a0dc7c",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "SQLQuery1",
+                            "outPinId": 1,
+                            "rhsNodeName": "consoleOutput",
+                            "inPinId": 1,
+                            "lhsNodeUid": "c9aeaefa-b45f-4190-99f7-99f72a574017",
+                            "rhsNodeUid": "fd898ff6-5923-4237-be52-8a053b97e4a7"
+                        }
+                    ],
+                    "pinIndex": 1,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "completed",
+                        "wires": {
+                            "1": {
+                                "sourceUUID": "ec840ce1-ac4f-4c91-babc-1d92e4a0dc7c",
+                                "destinationUUID": "4524437c-94d3-489b-b9b1-7cdf24c08a84",
+                                "sourceName": "SQLQuery1_completed",
+                                "destinationName": "consoleOutput_inExec",
+                                "uuid": "4b43a85a-a303-4ee5-bba8-cfd087ca6a92",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "result",
+                    "package": "DataNodes",
+                    "fullName": "SQLQuery1_result",
+                    "dataType": "DataFramePin",
+                    "direction": 1,
+                    "value": null,
+                    "uuid": "c8b343fc-6fd8-4d55-8368-159df1b0c081",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "SQLQuery1",
+                            "outPinId": 2,
+                            "rhsNodeName": "consoleOutput",
+                            "inPinId": 2,
+                            "lhsNodeUid": "c9aeaefa-b45f-4190-99f7-99f72a574017",
+                            "rhsNodeUid": "fd898ff6-5923-4237-be52-8a053b97e4a7"
+                        }
+                    ],
+                    "pinIndex": 2,
+                    "options": [],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "result",
+                        "wires": {
+                            "2": {
+                                "sourceUUID": "c8b343fc-6fd8-4d55-8368-159df1b0c081",
+                                "destinationUUID": "e1d1393b-804d-411c-afb7-ebc1a275864b",
+                                "sourceName": "SQLQuery1_result",
+                                "destinationName": "consoleOutput_entity",
+                                "uuid": "a7e3766d-9c1e-47e1-ab54-81c7b0e3a2d3",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                }
+            ],
+            "meta": {
+                "var": {},
+                "label": "SQLQuery1"
+            },
+            "wrapper": {
+                "collapsed": false,
+                "headerHtml": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\nhr { height: 1px; border-width: 0; }\nli.unchecked::marker { content: \"\\2610\"; }\nli.checked::marker { content: \"\\2612\"; }\n</style></head><body style=\" font-family:'Consolas'; font-size:6pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">SQLQuery1</p></body></html>",
+                "exposeInputsToCompound": false,
+                "groups": {
+                    "input": {},
+                    "output": {}
+                }
+            },
+            "x": -107.0,
+            "y": -298.0
+        },
+        {
+            "package": "PyFlowBase",
+            "lib": null,
+            "type": "consoleOutput",
+            "owningGraphName": "root",
+            "name": "consoleOutput",
+            "uuid": "fd898ff6-5923-4237-be52-8a053b97e4a7",
+            "inputs": [
+                {
+                    "name": "entity",
+                    "package": "PyFlowBase",
+                    "fullName": "consoleOutput_entity",
+                    "dataType": "AnyPin",
+                    "direction": 0,
+                    "value": null,
+                    "uuid": "e1d1393b-804d-411c-afb7-ebc1a275864b",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "SQLQuery1",
+                            "outPinId": 2,
+                            "rhsNodeName": "consoleOutput",
+                            "inPinId": 2,
+                            "lhsNodeUid": "c9aeaefa-b45f-4190-99f7-99f72a574017",
+                            "rhsNodeUid": "fd898ff6-5923-4237-be52-8a053b97e4a7"
+                        }
+                    ],
+                    "pinIndex": 2,
+                    "options": [
+                        16,
+                        256,
+                        512
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "entity",
+                        "wires": {
+                            "2": {
+                                "sourceUUID": "c8b343fc-6fd8-4d55-8368-159df1b0c081",
+                                "destinationUUID": "e1d1393b-804d-411c-afb7-ebc1a275864b",
+                                "sourceName": "SQLQuery1_result",
+                                "destinationName": "consoleOutput_entity",
+                                "uuid": "a7e3766d-9c1e-47e1-ab54-81c7b0e3a2d3",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "inExec",
+                    "package": "PyFlowBase",
+                    "fullName": "consoleOutput_inExec",
+                    "dataType": "ExecPin",
+                    "direction": 0,
+                    "value": "null",
+                    "uuid": "4524437c-94d3-489b-b9b1-7cdf24c08a84",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "SQLQuery1",
+                            "outPinId": 1,
+                            "rhsNodeName": "consoleOutput",
+                            "inPinId": 1,
+                            "lhsNodeUid": "c9aeaefa-b45f-4190-99f7-99f72a574017",
+                            "rhsNodeUid": "fd898ff6-5923-4237-be52-8a053b97e4a7"
+                        }
+                    ],
+                    "pinIndex": 1,
+                    "options": [
+                        8,
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "inExec",
+                        "wires": {
+                            "1": {
+                                "sourceUUID": "ec840ce1-ac4f-4c91-babc-1d92e4a0dc7c",
+                                "destinationUUID": "4524437c-94d3-489b-b9b1-7cdf24c08a84",
+                                "sourceName": "SQLQuery1_completed",
+                                "destinationName": "consoleOutput_inExec",
+                                "uuid": "4b43a85a-a303-4ee5-bba8-cfd087ca6a92",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "outExec",
+                    "package": "PyFlowBase",
+                    "fullName": "consoleOutput_outExec",
+                    "dataType": "ExecPin",
+                    "direction": 1,
+                    "value": "null",
+                    "uuid": "67b2bd33-2753-4ca6-9e8f-94c4a6970b45",
+                    "linkedTo": [],
+                    "pinIndex": 1,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "outExec",
+                        "wires": {}
+                    }
+                }
+            ],
+            "meta": {
+                "var": {},
+                "label": "consoleOutput"
+            },
+            "wrapper": {
+                "collapsed": false,
+                "headerHtml": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\nhr { height: 1px; border-width: 0; }\nli.unchecked::marker { content: \"\\2610\"; }\nli.checked::marker { content: \"\\2612\"; }\n</style></head><body style=\" font-family:'Consolas'; font-size:6pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">consoleOutput</p></body></html>",
+                "exposeInputsToCompound": false,
+                "groups": {
+                    "input": {},
+                    "output": {}
+                }
+            },
+            "x": 88.0,
+            "y": -300.0
+        }
+    ],
+    "depth": 1,
+    "isRoot": true,
+    "parentGraphName": "None",
+    "fileVersion": "3.0.0",
+    "activeGraph": "root"
+}
