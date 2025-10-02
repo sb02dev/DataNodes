@@ -90,6 +90,7 @@ class PyCnvDBLib(ConverterBase):  # type: ignore
         exporter.add_call(
             f"{exporter.get_out_list(node, post=' = ')}uploadPandas({', '.join(inpnames)})\n"
         )
+        exporter.set_node_processed(node)
         exporter.call_named_pin(node, DEFAULT_OUT_EXEC_NAME)
 
 
