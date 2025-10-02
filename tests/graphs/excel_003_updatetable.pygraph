@@ -1,0 +1,1669 @@
+{
+    "name": "root",
+    "category": "",
+    "vars": [],
+    "nodes": [
+        {
+            "package": "DataNodes",
+            "lib": "XLLib",
+            "type": "OpenExcel",
+            "owningGraphName": "root",
+            "name": "OpenExcel",
+            "uuid": "5afb392e-1c8b-4f17-b3b1-759c32a59493",
+            "inputs": [
+                {
+                    "name": "path",
+                    "package": "PyFlowBase",
+                    "fullName": "OpenExcel_path",
+                    "dataType": "StringPin",
+                    "direction": 0,
+                    "value": "\"tests\\\\graphs\\\\test_data.xlsx\"",
+                    "uuid": "612aaf01-9613-4233-b521-390cd3da0ca9",
+                    "linkedTo": [],
+                    "pinIndex": 2,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "path",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "inExec",
+                    "package": "PyFlowBase",
+                    "fullName": "OpenExcel_inExec",
+                    "dataType": "ExecPin",
+                    "direction": 0,
+                    "value": "null",
+                    "uuid": "a3954f5f-7774-45b4-a5ea-2a2e0e037baa",
+                    "linkedTo": [],
+                    "pinIndex": 1,
+                    "options": [
+                        8,
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "inExec",
+                        "wires": {}
+                    }
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "out",
+                    "package": "DataNodes",
+                    "fullName": "OpenExcel_out",
+                    "dataType": "XLWBookPin",
+                    "direction": 1,
+                    "value": null,
+                    "uuid": "9579abf2-5d5b-4eec-87d3-8d716fa5a5bf",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "OpenExcel",
+                            "outPinId": 2,
+                            "rhsNodeName": "LoadExcelTable",
+                            "inPinId": 2,
+                            "lhsNodeUid": "5afb392e-1c8b-4f17-b3b1-759c32a59493",
+                            "rhsNodeUid": "0d01d846-676f-461f-8315-971bdd77345b"
+                        },
+                        {
+                            "lhsNodeName": "OpenExcel",
+                            "outPinId": 2,
+                            "rhsNodeName": "CloseExcel",
+                            "inPinId": 2,
+                            "lhsNodeUid": "5afb392e-1c8b-4f17-b3b1-759c32a59493",
+                            "rhsNodeUid": "d9474d77-e454-4a29-be62-b7117f09f812"
+                        },
+                        {
+                            "lhsNodeName": "OpenExcel",
+                            "outPinId": 2,
+                            "rhsNodeName": "UpdateExcelTable",
+                            "inPinId": 2,
+                            "lhsNodeUid": "5afb392e-1c8b-4f17-b3b1-759c32a59493",
+                            "rhsNodeUid": "d5b4574b-7dfd-4cf1-8a32-c938d2e456d5"
+                        },
+                        {
+                            "lhsNodeName": "OpenExcel",
+                            "outPinId": 2,
+                            "rhsNodeName": "LoadExcelRange",
+                            "inPinId": 2,
+                            "lhsNodeUid": "5afb392e-1c8b-4f17-b3b1-759c32a59493",
+                            "rhsNodeUid": "2bd7e5ff-c6c2-48ae-84bc-a3e5d3138036"
+                        }
+                    ],
+                    "pinIndex": 2,
+                    "options": [],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "out",
+                        "wires": {
+                            "2": {
+                                "sourceUUID": "9579abf2-5d5b-4eec-87d3-8d716fa5a5bf",
+                                "destinationUUID": "0ae4f3e6-732e-4499-bcd2-ff5d7393afdf",
+                                "sourceName": "OpenExcel_out",
+                                "destinationName": "LoadExcelTable_book",
+                                "uuid": "3f461c2b-afc8-430d-820c-a1b56741dd1a",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "outExec",
+                    "package": "PyFlowBase",
+                    "fullName": "OpenExcel_outExec",
+                    "dataType": "ExecPin",
+                    "direction": 1,
+                    "value": "null",
+                    "uuid": "1c2664e3-ed62-4c3f-ae35-60a025dc88b5",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "OpenExcel",
+                            "outPinId": 1,
+                            "rhsNodeName": "LoadExcelRange",
+                            "inPinId": 1,
+                            "lhsNodeUid": "5afb392e-1c8b-4f17-b3b1-759c32a59493",
+                            "rhsNodeUid": "2bd7e5ff-c6c2-48ae-84bc-a3e5d3138036"
+                        }
+                    ],
+                    "pinIndex": 1,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "outExec",
+                        "wires": {
+                            "1": {
+                                "sourceUUID": "1c2664e3-ed62-4c3f-ae35-60a025dc88b5",
+                                "destinationUUID": "a070cbb6-74ea-48bf-8668-a18c034794ba",
+                                "sourceName": "OpenExcel_outExec",
+                                "destinationName": "LoadExcelRange_inExec",
+                                "uuid": "e0d36f36-1623-4198-b1f1-79869c03f36e",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                }
+            ],
+            "meta": {
+                "var": {},
+                "label": "OpenExcel"
+            },
+            "wrapper": {
+                "collapsed": false,
+                "headerHtml": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\nhr { height: 1px; border-width: 0; }\nli.unchecked::marker { content: \"\\2610\"; }\nli.checked::marker { content: \"\\2612\"; }\n</style></head><body style=\" font-family:'Consolas'; font-size:6pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">OpenExcel</p></body></html>",
+                "exposeInputsToCompound": false,
+                "groups": {
+                    "input": {},
+                    "output": {}
+                }
+            },
+            "x": -606.8811881188119,
+            "y": -261.33663366336634
+        },
+        {
+            "package": "DataNodes",
+            "lib": "XLLib",
+            "type": "CloseExcel",
+            "owningGraphName": "root",
+            "name": "CloseExcel",
+            "uuid": "d9474d77-e454-4a29-be62-b7117f09f812",
+            "inputs": [
+                {
+                    "name": "book",
+                    "package": "DataNodes",
+                    "fullName": "CloseExcel_book",
+                    "dataType": "XLWBookPin",
+                    "direction": 0,
+                    "value": null,
+                    "uuid": "d67a2594-1f06-4571-8880-06888939d694",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "OpenExcel",
+                            "outPinId": 2,
+                            "rhsNodeName": "CloseExcel",
+                            "inPinId": 2,
+                            "lhsNodeUid": "5afb392e-1c8b-4f17-b3b1-759c32a59493",
+                            "rhsNodeUid": "d9474d77-e454-4a29-be62-b7117f09f812"
+                        }
+                    ],
+                    "pinIndex": 2,
+                    "options": [],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "book",
+                        "wires": {
+                            "2": {
+                                "sourceUUID": "9579abf2-5d5b-4eec-87d3-8d716fa5a5bf",
+                                "destinationUUID": "d67a2594-1f06-4571-8880-06888939d694",
+                                "sourceName": "OpenExcel_out",
+                                "destinationName": "CloseExcel_book",
+                                "uuid": "d382ea97-f14a-450d-aa64-c63317e7185e",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "inExec",
+                    "package": "PyFlowBase",
+                    "fullName": "CloseExcel_inExec",
+                    "dataType": "ExecPin",
+                    "direction": 0,
+                    "value": "null",
+                    "uuid": "c63b397d-faac-4ff8-835a-4042c50d1fec",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "LoadExcelTable",
+                            "outPinId": 1,
+                            "rhsNodeName": "CloseExcel",
+                            "inPinId": 1,
+                            "lhsNodeUid": "0d01d846-676f-461f-8315-971bdd77345b",
+                            "rhsNodeUid": "d9474d77-e454-4a29-be62-b7117f09f812"
+                        }
+                    ],
+                    "pinIndex": 1,
+                    "options": [
+                        8,
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "inExec",
+                        "wires": {
+                            "1": {
+                                "sourceUUID": "7e27f0dc-0662-40ed-8df2-c41e105644dd",
+                                "destinationUUID": "c63b397d-faac-4ff8-835a-4042c50d1fec",
+                                "sourceName": "LoadExcelTable_outExec",
+                                "destinationName": "CloseExcel_inExec",
+                                "uuid": "c0dcd62c-6806-4cac-8751-6e31f0e4e256",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "outExec",
+                    "package": "PyFlowBase",
+                    "fullName": "CloseExcel_outExec",
+                    "dataType": "ExecPin",
+                    "direction": 1,
+                    "value": "null",
+                    "uuid": "2dc95877-5e21-401a-9b91-f1bc5d8103af",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "CloseExcel",
+                            "outPinId": 1,
+                            "rhsNodeName": "consoleOutput",
+                            "inPinId": 1,
+                            "lhsNodeUid": "d9474d77-e454-4a29-be62-b7117f09f812",
+                            "rhsNodeUid": "da257799-41ac-4b6d-9735-5f726fc8c5d9"
+                        }
+                    ],
+                    "pinIndex": 1,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "outExec",
+                        "wires": {
+                            "1": {
+                                "sourceUUID": "2dc95877-5e21-401a-9b91-f1bc5d8103af",
+                                "destinationUUID": "e8faa006-f415-4505-9e7f-8bb88a8afc17",
+                                "sourceName": "CloseExcel_outExec",
+                                "destinationName": "consoleOutput_inExec",
+                                "uuid": "33a796af-f26e-45f5-b44d-3b2593a76adc",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                }
+            ],
+            "meta": {
+                "var": {},
+                "label": "CloseExcel"
+            },
+            "wrapper": {
+                "collapsed": false,
+                "headerHtml": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\nhr { height: 1px; border-width: 0; }\nli.unchecked::marker { content: \"\\2610\"; }\nli.checked::marker { content: \"\\2612\"; }\n</style></head><body style=\" font-family:'Consolas'; font-size:6pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">CloseExcel</p></body></html>",
+                "exposeInputsToCompound": false,
+                "groups": {
+                    "input": {},
+                    "output": {}
+                }
+            },
+            "x": 301.5385764991594,
+            "y": -107.40257799364849
+        },
+        {
+            "package": "PyFlowBase",
+            "lib": null,
+            "type": "consoleOutput",
+            "owningGraphName": "root",
+            "name": "consoleOutput",
+            "uuid": "da257799-41ac-4b6d-9735-5f726fc8c5d9",
+            "inputs": [
+                {
+                    "name": "entity",
+                    "package": "PyFlowBase",
+                    "fullName": "consoleOutput_entity",
+                    "dataType": "AnyPin",
+                    "direction": 0,
+                    "value": null,
+                    "uuid": "f37e723d-8538-41e3-9ff1-7610293e90c2",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "LoadExcelTable",
+                            "outPinId": 2,
+                            "rhsNodeName": "consoleOutput",
+                            "inPinId": 2,
+                            "lhsNodeUid": "0d01d846-676f-461f-8315-971bdd77345b",
+                            "rhsNodeUid": "da257799-41ac-4b6d-9735-5f726fc8c5d9"
+                        }
+                    ],
+                    "pinIndex": 2,
+                    "options": [
+                        16,
+                        256,
+                        512
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "entity",
+                        "wires": {
+                            "2": {
+                                "sourceUUID": "a4592dd3-7162-471c-b040-506cedced9d5",
+                                "destinationUUID": "f37e723d-8538-41e3-9ff1-7610293e90c2",
+                                "sourceName": "LoadExcelTable_out",
+                                "destinationName": "consoleOutput_entity",
+                                "uuid": "502abde9-6823-42ae-bc5c-1c32d9e13ba7",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "inExec",
+                    "package": "PyFlowBase",
+                    "fullName": "consoleOutput_inExec",
+                    "dataType": "ExecPin",
+                    "direction": 0,
+                    "value": "null",
+                    "uuid": "e8faa006-f415-4505-9e7f-8bb88a8afc17",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "CloseExcel",
+                            "outPinId": 1,
+                            "rhsNodeName": "consoleOutput",
+                            "inPinId": 1,
+                            "lhsNodeUid": "d9474d77-e454-4a29-be62-b7117f09f812",
+                            "rhsNodeUid": "da257799-41ac-4b6d-9735-5f726fc8c5d9"
+                        }
+                    ],
+                    "pinIndex": 1,
+                    "options": [
+                        8,
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "inExec",
+                        "wires": {
+                            "1": {
+                                "sourceUUID": "2dc95877-5e21-401a-9b91-f1bc5d8103af",
+                                "destinationUUID": "e8faa006-f415-4505-9e7f-8bb88a8afc17",
+                                "sourceName": "CloseExcel_outExec",
+                                "destinationName": "consoleOutput_inExec",
+                                "uuid": "33a796af-f26e-45f5-b44d-3b2593a76adc",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "outExec",
+                    "package": "PyFlowBase",
+                    "fullName": "consoleOutput_outExec",
+                    "dataType": "ExecPin",
+                    "direction": 1,
+                    "value": "null",
+                    "uuid": "2bc47850-b248-4953-b06d-6db6018ebe82",
+                    "linkedTo": [],
+                    "pinIndex": 1,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "outExec",
+                        "wires": {}
+                    }
+                }
+            ],
+            "meta": {
+                "var": {},
+                "label": "consoleOutput"
+            },
+            "wrapper": {
+                "collapsed": false,
+                "headerHtml": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\nhr { height: 1px; border-width: 0; }\nli.unchecked::marker { content: \"\\2610\"; }\nli.checked::marker { content: \"\\2612\"; }\n</style></head><body style=\" font-family:'Consolas'; font-size:6pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">consoleOutput</p></body></html>",
+                "exposeInputsToCompound": false,
+                "groups": {
+                    "input": {},
+                    "output": {}
+                }
+            },
+            "x": 441.01270315710815,
+            "y": -83.6566411358117
+        },
+        {
+            "package": "DataNodes",
+            "lib": "XLLib",
+            "type": "LoadExcelRange",
+            "owningGraphName": "root",
+            "name": "LoadExcelRange",
+            "uuid": "2bd7e5ff-c6c2-48ae-84bc-a3e5d3138036",
+            "inputs": [
+                {
+                    "name": "range_name",
+                    "package": "PyFlowBase",
+                    "fullName": "LoadExcelRange_range_name",
+                    "dataType": "StringPin",
+                    "direction": 0,
+                    "value": "\"A1\"",
+                    "uuid": "a8f7f4d0-333d-49eb-9609-8188fe146eee",
+                    "linkedTo": [],
+                    "pinIndex": 4,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "range_name",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "index",
+                    "package": "PyFlowBase",
+                    "fullName": "LoadExcelRange_index",
+                    "dataType": "BoolPin",
+                    "direction": 0,
+                    "value": "false",
+                    "uuid": "2a77156e-094c-4f78-b584-b37b48e8f9e4",
+                    "linkedTo": [],
+                    "pinIndex": 6,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "index",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "num_header_rows",
+                    "package": "PyFlowBase",
+                    "fullName": "LoadExcelRange_num_header_rows",
+                    "dataType": "IntPin",
+                    "direction": 0,
+                    "value": "1",
+                    "uuid": "29ebb0b2-1f74-4d2f-8387-75c0a8218976",
+                    "linkedTo": [],
+                    "pinIndex": 5,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "num_header_rows",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "expand",
+                    "package": "PyFlowBase",
+                    "fullName": "LoadExcelRange_expand",
+                    "dataType": "StringPin",
+                    "direction": 0,
+                    "value": "\"table\"",
+                    "uuid": "eccfb082-99b1-4074-871c-55849d7898d9",
+                    "linkedTo": [],
+                    "pinIndex": 7,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "expand",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "book",
+                    "package": "DataNodes",
+                    "fullName": "LoadExcelRange_book",
+                    "dataType": "XLWBookPin",
+                    "direction": 0,
+                    "value": null,
+                    "uuid": "aa5fdc5e-1881-4db6-941a-5f0172b22ebe",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "OpenExcel",
+                            "outPinId": 2,
+                            "rhsNodeName": "LoadExcelRange",
+                            "inPinId": 2,
+                            "lhsNodeUid": "5afb392e-1c8b-4f17-b3b1-759c32a59493",
+                            "rhsNodeUid": "2bd7e5ff-c6c2-48ae-84bc-a3e5d3138036"
+                        }
+                    ],
+                    "pinIndex": 2,
+                    "options": [],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "book",
+                        "wires": {
+                            "2": {
+                                "sourceUUID": "9579abf2-5d5b-4eec-87d3-8d716fa5a5bf",
+                                "destinationUUID": "aa5fdc5e-1881-4db6-941a-5f0172b22ebe",
+                                "sourceName": "OpenExcel_out",
+                                "destinationName": "LoadExcelRange_book",
+                                "uuid": "21a9582e-a511-4a71-9650-7042f8149859",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "sheet_name",
+                    "package": "PyFlowBase",
+                    "fullName": "LoadExcelRange_sheet_name",
+                    "dataType": "StringPin",
+                    "direction": 0,
+                    "value": "\"data1\"",
+                    "uuid": "132590a8-91ee-4a65-9a0f-23444afcb81a",
+                    "linkedTo": [],
+                    "pinIndex": 3,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "sheet_name",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "inExec",
+                    "package": "PyFlowBase",
+                    "fullName": "LoadExcelRange_inExec",
+                    "dataType": "ExecPin",
+                    "direction": 0,
+                    "value": "null",
+                    "uuid": "a070cbb6-74ea-48bf-8668-a18c034794ba",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "OpenExcel",
+                            "outPinId": 1,
+                            "rhsNodeName": "LoadExcelRange",
+                            "inPinId": 1,
+                            "lhsNodeUid": "5afb392e-1c8b-4f17-b3b1-759c32a59493",
+                            "rhsNodeUid": "2bd7e5ff-c6c2-48ae-84bc-a3e5d3138036"
+                        }
+                    ],
+                    "pinIndex": 1,
+                    "options": [
+                        8,
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "inExec",
+                        "wires": {
+                            "1": {
+                                "sourceUUID": "1c2664e3-ed62-4c3f-ae35-60a025dc88b5",
+                                "destinationUUID": "a070cbb6-74ea-48bf-8668-a18c034794ba",
+                                "sourceName": "OpenExcel_outExec",
+                                "destinationName": "LoadExcelRange_inExec",
+                                "uuid": "e0d36f36-1623-4198-b1f1-79869c03f36e",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "outExec",
+                    "package": "PyFlowBase",
+                    "fullName": "LoadExcelRange_outExec",
+                    "dataType": "ExecPin",
+                    "direction": 1,
+                    "value": "null",
+                    "uuid": "2eed6a18-9e4a-45b5-b0bf-119651c7ee6d",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "LoadExcelRange",
+                            "outPinId": 1,
+                            "rhsNodeName": "PandasSQLQuery",
+                            "inPinId": 1,
+                            "lhsNodeUid": "2bd7e5ff-c6c2-48ae-84bc-a3e5d3138036",
+                            "rhsNodeUid": "05b80d67-0fba-4b18-84c3-f322b4f68854"
+                        }
+                    ],
+                    "pinIndex": 1,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "outExec",
+                        "wires": {
+                            "1": {
+                                "sourceUUID": "2eed6a18-9e4a-45b5-b0bf-119651c7ee6d",
+                                "destinationUUID": "fe43925c-2a0e-46a5-b035-5527e05af749",
+                                "sourceName": "LoadExcelRange_outExec",
+                                "destinationName": "PandasSQLQuery_query",
+                                "uuid": "d10db938-0f4b-46a1-b432-262f57d807f9",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "out",
+                    "package": "DataNodes",
+                    "fullName": "LoadExcelRange_out",
+                    "dataType": "DataFramePin",
+                    "direction": 1,
+                    "value": null,
+                    "uuid": "f74d5498-7f42-49e0-aeec-d842da0e1986",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "LoadExcelRange",
+                            "outPinId": 2,
+                            "rhsNodeName": "PandasSQLQuery",
+                            "inPinId": 4,
+                            "lhsNodeUid": "2bd7e5ff-c6c2-48ae-84bc-a3e5d3138036",
+                            "rhsNodeUid": "05b80d67-0fba-4b18-84c3-f322b4f68854"
+                        }
+                    ],
+                    "pinIndex": 2,
+                    "options": [],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "out",
+                        "wires": {
+                            "4": {
+                                "sourceUUID": "f74d5498-7f42-49e0-aeec-d842da0e1986",
+                                "destinationUUID": "b6a3ab23-5d58-492f-8a30-e8dda1bfbdca",
+                                "sourceName": "LoadExcelRange_out",
+                                "destinationName": "PandasSQLQuery_data1",
+                                "uuid": "85c25ff6-9444-4a69-b8dc-e75bbe6416c6",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                }
+            ],
+            "meta": {
+                "var": {},
+                "label": "LoadExcelRange"
+            },
+            "wrapper": {
+                "collapsed": false,
+                "headerHtml": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\nhr { height: 1px; border-width: 0; }\nli.unchecked::marker { content: \"\\2610\"; }\nli.checked::marker { content: \"\\2612\"; }\n</style></head><body style=\" font-family:'Consolas'; font-size:6pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">LoadExcelRange</p></body></html>",
+                "exposeInputsToCompound": false,
+                "groups": {
+                    "input": {},
+                    "output": {}
+                }
+            },
+            "x": -471.0,
+            "y": -267.0
+        },
+        {
+            "package": "DataNodes",
+            "lib": null,
+            "type": "PandasSQLQuery",
+            "owningGraphName": "root",
+            "name": "PandasSQLQuery",
+            "uuid": "05b80d67-0fba-4b18-84c3-f322b4f68854",
+            "inputs": [
+                {
+                    "name": "sql",
+                    "package": "PyFlowBase",
+                    "fullName": "PandasSQLQuery_sql",
+                    "dataType": "StringPin",
+                    "direction": 0,
+                    "value": "\"select *\\nfrom data1\\nwhere id<=2\"",
+                    "uuid": "7962cf10-0524-4d6f-9131-55b3d0e4825a",
+                    "linkedTo": [],
+                    "pinIndex": 2,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "sql",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "param_dict",
+                    "package": "PyFlowBase",
+                    "fullName": "PandasSQLQuery_param_dict",
+                    "dataType": "AnyPin",
+                    "direction": 0,
+                    "value": null,
+                    "uuid": "20512843-6697-4eb3-aaa5-39cbac3743e0",
+                    "linkedTo": [],
+                    "pinIndex": 3,
+                    "options": [
+                        4,
+                        16,
+                        256,
+                        512
+                    ],
+                    "structure": 2,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": true,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "param_dict",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "query",
+                    "package": "PyFlowBase",
+                    "fullName": "PandasSQLQuery_query",
+                    "dataType": "ExecPin",
+                    "direction": 0,
+                    "value": "null",
+                    "uuid": "fe43925c-2a0e-46a5-b035-5527e05af749",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "LoadExcelRange",
+                            "outPinId": 1,
+                            "rhsNodeName": "PandasSQLQuery",
+                            "inPinId": 1,
+                            "lhsNodeUid": "2bd7e5ff-c6c2-48ae-84bc-a3e5d3138036",
+                            "rhsNodeUid": "05b80d67-0fba-4b18-84c3-f322b4f68854"
+                        }
+                    ],
+                    "pinIndex": 1,
+                    "options": [
+                        8,
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "query",
+                        "wires": {
+                            "1": {
+                                "sourceUUID": "2eed6a18-9e4a-45b5-b0bf-119651c7ee6d",
+                                "destinationUUID": "fe43925c-2a0e-46a5-b035-5527e05af749",
+                                "sourceName": "LoadExcelRange_outExec",
+                                "destinationName": "PandasSQLQuery_query",
+                                "uuid": "d10db938-0f4b-46a1-b432-262f57d807f9",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "data1",
+                    "package": "DataNodes",
+                    "fullName": "PandasSQLQuery_data1",
+                    "dataType": "DataFramePin",
+                    "direction": 0,
+                    "value": null,
+                    "uuid": "b6a3ab23-5d58-492f-8a30-e8dda1bfbdca",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "LoadExcelRange",
+                            "outPinId": 2,
+                            "rhsNodeName": "PandasSQLQuery",
+                            "inPinId": 4,
+                            "lhsNodeUid": "2bd7e5ff-c6c2-48ae-84bc-a3e5d3138036",
+                            "rhsNodeUid": "05b80d67-0fba-4b18-84c3-f322b4f68854"
+                        }
+                    ],
+                    "pinIndex": 4,
+                    "options": [
+                        32,
+                        64
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "data1",
+                        "wires": {
+                            "4": {
+                                "sourceUUID": "f74d5498-7f42-49e0-aeec-d842da0e1986",
+                                "destinationUUID": "b6a3ab23-5d58-492f-8a30-e8dda1bfbdca",
+                                "sourceName": "LoadExcelRange_out",
+                                "destinationName": "PandasSQLQuery_data1",
+                                "uuid": "85c25ff6-9444-4a69-b8dc-e75bbe6416c6",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "result",
+                    "package": "DataNodes",
+                    "fullName": "PandasSQLQuery_result",
+                    "dataType": "DataFramePin",
+                    "direction": 1,
+                    "value": null,
+                    "uuid": "15a0a8d5-e860-4767-955e-8097c74d7ad3",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "PandasSQLQuery",
+                            "outPinId": 2,
+                            "rhsNodeName": "UpdateExcelTable",
+                            "inPinId": 5,
+                            "lhsNodeUid": "05b80d67-0fba-4b18-84c3-f322b4f68854",
+                            "rhsNodeUid": "d5b4574b-7dfd-4cf1-8a32-c938d2e456d5"
+                        }
+                    ],
+                    "pinIndex": 2,
+                    "options": [],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "result",
+                        "wires": {
+                            "5": {
+                                "sourceUUID": "15a0a8d5-e860-4767-955e-8097c74d7ad3",
+                                "destinationUUID": "3263319d-9b5c-48d2-85b8-cc6a8a760f4a",
+                                "sourceName": "PandasSQLQuery_result",
+                                "destinationName": "UpdateExcelTable_data",
+                                "uuid": "d708d888-94fe-4121-af5d-44e7c17e4e23",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "completed",
+                    "package": "PyFlowBase",
+                    "fullName": "PandasSQLQuery_completed",
+                    "dataType": "ExecPin",
+                    "direction": 1,
+                    "value": "null",
+                    "uuid": "b0e74058-6940-4966-9566-7e5280c0465b",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "PandasSQLQuery",
+                            "outPinId": 1,
+                            "rhsNodeName": "UpdateExcelTable",
+                            "inPinId": 1,
+                            "lhsNodeUid": "05b80d67-0fba-4b18-84c3-f322b4f68854",
+                            "rhsNodeUid": "d5b4574b-7dfd-4cf1-8a32-c938d2e456d5"
+                        }
+                    ],
+                    "pinIndex": 1,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "completed",
+                        "wires": {
+                            "1": {
+                                "sourceUUID": "b0e74058-6940-4966-9566-7e5280c0465b",
+                                "destinationUUID": "b080cd89-d3de-424e-8d8d-788a5c3146fa",
+                                "sourceName": "PandasSQLQuery_completed",
+                                "destinationName": "UpdateExcelTable_inExec",
+                                "uuid": "581a3aca-ffed-4efc-9f1b-9b28f09cf53d",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                }
+            ],
+            "meta": {
+                "var": {},
+                "label": "PandasSQLQuery"
+            },
+            "wrapper": {
+                "collapsed": false,
+                "headerHtml": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\nhr { height: 1px; border-width: 0; }\nli.unchecked::marker { content: \"\\2610\"; }\nli.checked::marker { content: \"\\2612\"; }\n</style></head><body style=\" font-family:'Consolas'; font-size:6pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">PandasSQLQuery</p></body></html>",
+                "exposeInputsToCompound": false,
+                "groups": {
+                    "input": {},
+                    "output": {}
+                }
+            },
+            "x": -257.0,
+            "y": -183.0
+        },
+        {
+            "package": "DataNodes",
+            "lib": "XLLib",
+            "type": "UpdateExcelTable",
+            "owningGraphName": "root",
+            "name": "UpdateExcelTable",
+            "uuid": "d5b4574b-7dfd-4cf1-8a32-c938d2e456d5",
+            "inputs": [
+                {
+                    "name": "table_name",
+                    "package": "PyFlowBase",
+                    "fullName": "UpdateExcelTable_table_name",
+                    "dataType": "StringPin",
+                    "direction": 0,
+                    "value": "\"tData1\"",
+                    "uuid": "a67ba251-864d-4924-8cec-119567ac4d64",
+                    "linkedTo": [],
+                    "pinIndex": 4,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "table_name",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "inExec",
+                    "package": "PyFlowBase",
+                    "fullName": "UpdateExcelTable_inExec",
+                    "dataType": "ExecPin",
+                    "direction": 0,
+                    "value": "null",
+                    "uuid": "b080cd89-d3de-424e-8d8d-788a5c3146fa",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "PandasSQLQuery",
+                            "outPinId": 1,
+                            "rhsNodeName": "UpdateExcelTable",
+                            "inPinId": 1,
+                            "lhsNodeUid": "05b80d67-0fba-4b18-84c3-f322b4f68854",
+                            "rhsNodeUid": "d5b4574b-7dfd-4cf1-8a32-c938d2e456d5"
+                        }
+                    ],
+                    "pinIndex": 1,
+                    "options": [
+                        8,
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "inExec",
+                        "wires": {
+                            "1": {
+                                "sourceUUID": "b0e74058-6940-4966-9566-7e5280c0465b",
+                                "destinationUUID": "b080cd89-d3de-424e-8d8d-788a5c3146fa",
+                                "sourceName": "PandasSQLQuery_completed",
+                                "destinationName": "UpdateExcelTable_inExec",
+                                "uuid": "581a3aca-ffed-4efc-9f1b-9b28f09cf53d",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "data",
+                    "package": "DataNodes",
+                    "fullName": "UpdateExcelTable_data",
+                    "dataType": "DataFramePin",
+                    "direction": 0,
+                    "value": null,
+                    "uuid": "3263319d-9b5c-48d2-85b8-cc6a8a760f4a",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "PandasSQLQuery",
+                            "outPinId": 2,
+                            "rhsNodeName": "UpdateExcelTable",
+                            "inPinId": 5,
+                            "lhsNodeUid": "05b80d67-0fba-4b18-84c3-f322b4f68854",
+                            "rhsNodeUid": "d5b4574b-7dfd-4cf1-8a32-c938d2e456d5"
+                        }
+                    ],
+                    "pinIndex": 5,
+                    "options": [],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "data",
+                        "wires": {
+                            "5": {
+                                "sourceUUID": "15a0a8d5-e860-4767-955e-8097c74d7ad3",
+                                "destinationUUID": "3263319d-9b5c-48d2-85b8-cc6a8a760f4a",
+                                "sourceName": "PandasSQLQuery_result",
+                                "destinationName": "UpdateExcelTable_data",
+                                "uuid": "d708d888-94fe-4121-af5d-44e7c17e4e23",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "index",
+                    "package": "PyFlowBase",
+                    "fullName": "UpdateExcelTable_index",
+                    "dataType": "BoolPin",
+                    "direction": 0,
+                    "value": "false",
+                    "uuid": "82a63924-5918-4bb5-9fe9-d276d42e37ef",
+                    "linkedTo": [],
+                    "pinIndex": 6,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "index",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "book",
+                    "package": "DataNodes",
+                    "fullName": "UpdateExcelTable_book",
+                    "dataType": "XLWBookPin",
+                    "direction": 0,
+                    "value": null,
+                    "uuid": "c2b9b7e4-794f-467f-95fb-9cc9f3f1c896",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "OpenExcel",
+                            "outPinId": 2,
+                            "rhsNodeName": "UpdateExcelTable",
+                            "inPinId": 2,
+                            "lhsNodeUid": "5afb392e-1c8b-4f17-b3b1-759c32a59493",
+                            "rhsNodeUid": "d5b4574b-7dfd-4cf1-8a32-c938d2e456d5"
+                        }
+                    ],
+                    "pinIndex": 2,
+                    "options": [],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "book",
+                        "wires": {
+                            "2": {
+                                "sourceUUID": "9579abf2-5d5b-4eec-87d3-8d716fa5a5bf",
+                                "destinationUUID": "c2b9b7e4-794f-467f-95fb-9cc9f3f1c896",
+                                "sourceName": "OpenExcel_out",
+                                "destinationName": "UpdateExcelTable_book",
+                                "uuid": "a369dd16-03a1-47c3-8a66-a11b51b333dd",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "sheet_name",
+                    "package": "PyFlowBase",
+                    "fullName": "UpdateExcelTable_sheet_name",
+                    "dataType": "StringPin",
+                    "direction": 0,
+                    "value": "\"data1\"",
+                    "uuid": "15f0024a-b1de-4998-a975-6893915f3455",
+                    "linkedTo": [],
+                    "pinIndex": 3,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "sheet_name",
+                        "wires": {}
+                    }
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "outExec",
+                    "package": "PyFlowBase",
+                    "fullName": "UpdateExcelTable_outExec",
+                    "dataType": "ExecPin",
+                    "direction": 1,
+                    "value": "null",
+                    "uuid": "7398dbab-4301-4d7a-a11d-27e778af09a5",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "UpdateExcelTable",
+                            "outPinId": 1,
+                            "rhsNodeName": "LoadExcelTable",
+                            "inPinId": 1,
+                            "lhsNodeUid": "d5b4574b-7dfd-4cf1-8a32-c938d2e456d5",
+                            "rhsNodeUid": "0d01d846-676f-461f-8315-971bdd77345b"
+                        }
+                    ],
+                    "pinIndex": 1,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "outExec",
+                        "wires": {
+                            "1": {
+                                "sourceUUID": "7398dbab-4301-4d7a-a11d-27e778af09a5",
+                                "destinationUUID": "ffdb42c2-53f3-448a-8c73-82de4dfe1104",
+                                "sourceName": "UpdateExcelTable_outExec",
+                                "destinationName": "LoadExcelTable_inExec",
+                                "uuid": "2d62dd92-79c1-4f63-9773-b5096873f9da",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                }
+            ],
+            "meta": {
+                "var": {},
+                "label": "UpdateExcelTable"
+            },
+            "wrapper": {
+                "collapsed": false,
+                "headerHtml": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\nhr { height: 1px; border-width: 0; }\nli.unchecked::marker { content: \"\\2610\"; }\nli.checked::marker { content: \"\\2612\"; }\n</style></head><body style=\" font-family:'Consolas'; font-size:6pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">UpdateExcelTable</p></body></html>",
+                "exposeInputsToCompound": false,
+                "groups": {
+                    "input": {},
+                    "output": {}
+                }
+            },
+            "x": -52.0,
+            "y": -157.0
+        },
+        {
+            "package": "DataNodes",
+            "lib": "XLLib",
+            "type": "LoadExcelTable",
+            "owningGraphName": "root",
+            "name": "LoadExcelTable",
+            "uuid": "0d01d846-676f-461f-8315-971bdd77345b",
+            "inputs": [
+                {
+                    "name": "inExec",
+                    "package": "PyFlowBase",
+                    "fullName": "LoadExcelTable_inExec",
+                    "dataType": "ExecPin",
+                    "direction": 0,
+                    "value": "null",
+                    "uuid": "ffdb42c2-53f3-448a-8c73-82de4dfe1104",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "UpdateExcelTable",
+                            "outPinId": 1,
+                            "rhsNodeName": "LoadExcelTable",
+                            "inPinId": 1,
+                            "lhsNodeUid": "d5b4574b-7dfd-4cf1-8a32-c938d2e456d5",
+                            "rhsNodeUid": "0d01d846-676f-461f-8315-971bdd77345b"
+                        }
+                    ],
+                    "pinIndex": 1,
+                    "options": [
+                        8,
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "inExec",
+                        "wires": {
+                            "1": {
+                                "sourceUUID": "7398dbab-4301-4d7a-a11d-27e778af09a5",
+                                "destinationUUID": "ffdb42c2-53f3-448a-8c73-82de4dfe1104",
+                                "sourceName": "UpdateExcelTable_outExec",
+                                "destinationName": "LoadExcelTable_inExec",
+                                "uuid": "2d62dd92-79c1-4f63-9773-b5096873f9da",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "table",
+                    "package": "PyFlowBase",
+                    "fullName": "LoadExcelTable_table",
+                    "dataType": "StringPin",
+                    "direction": 0,
+                    "value": "\"tData1\"",
+                    "uuid": "2fe53786-9f42-4fb2-b6db-d272a67f7b1d",
+                    "linkedTo": [],
+                    "pinIndex": 3,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "table",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "index",
+                    "package": "PyFlowBase",
+                    "fullName": "LoadExcelTable_index",
+                    "dataType": "BoolPin",
+                    "direction": 0,
+                    "value": "false",
+                    "uuid": "b5d631a9-33e8-4b1b-94cf-a791bb803a39",
+                    "linkedTo": [],
+                    "pinIndex": 4,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "index",
+                        "wires": {}
+                    }
+                },
+                {
+                    "name": "book",
+                    "package": "DataNodes",
+                    "fullName": "LoadExcelTable_book",
+                    "dataType": "XLWBookPin",
+                    "direction": 0,
+                    "value": null,
+                    "uuid": "0ae4f3e6-732e-4499-bcd2-ff5d7393afdf",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "OpenExcel",
+                            "outPinId": 2,
+                            "rhsNodeName": "LoadExcelTable",
+                            "inPinId": 2,
+                            "lhsNodeUid": "5afb392e-1c8b-4f17-b3b1-759c32a59493",
+                            "rhsNodeUid": "0d01d846-676f-461f-8315-971bdd77345b"
+                        }
+                    ],
+                    "pinIndex": 2,
+                    "options": [],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "book",
+                        "wires": {
+                            "2": {
+                                "sourceUUID": "9579abf2-5d5b-4eec-87d3-8d716fa5a5bf",
+                                "destinationUUID": "0ae4f3e6-732e-4499-bcd2-ff5d7393afdf",
+                                "sourceName": "OpenExcel_out",
+                                "destinationName": "LoadExcelTable_book",
+                                "uuid": "3f461c2b-afc8-430d-820c-a1b56741dd1a",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "out",
+                    "package": "DataNodes",
+                    "fullName": "LoadExcelTable_out",
+                    "dataType": "DataFramePin",
+                    "direction": 1,
+                    "value": null,
+                    "uuid": "a4592dd3-7162-471c-b040-506cedced9d5",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "LoadExcelTable",
+                            "outPinId": 2,
+                            "rhsNodeName": "consoleOutput",
+                            "inPinId": 2,
+                            "lhsNodeUid": "0d01d846-676f-461f-8315-971bdd77345b",
+                            "rhsNodeUid": "da257799-41ac-4b6d-9735-5f726fc8c5d9"
+                        }
+                    ],
+                    "pinIndex": 2,
+                    "options": [],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "out",
+                        "wires": {
+                            "2": {
+                                "sourceUUID": "a4592dd3-7162-471c-b040-506cedced9d5",
+                                "destinationUUID": "f37e723d-8538-41e3-9ff1-7610293e90c2",
+                                "sourceName": "LoadExcelTable_out",
+                                "destinationName": "consoleOutput_entity",
+                                "uuid": "502abde9-6823-42ae-bc5c-1c32d9e13ba7",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "outExec",
+                    "package": "PyFlowBase",
+                    "fullName": "LoadExcelTable_outExec",
+                    "dataType": "ExecPin",
+                    "direction": 1,
+                    "value": "null",
+                    "uuid": "7e27f0dc-0662-40ed-8df2-c41e105644dd",
+                    "linkedTo": [
+                        {
+                            "lhsNodeName": "LoadExcelTable",
+                            "outPinId": 1,
+                            "rhsNodeName": "CloseExcel",
+                            "inPinId": 1,
+                            "lhsNodeUid": "0d01d846-676f-461f-8315-971bdd77345b",
+                            "rhsNodeUid": "d9474d77-e454-4a29-be62-b7117f09f812"
+                        }
+                    ],
+                    "pinIndex": 1,
+                    "options": [
+                        256
+                    ],
+                    "structure": 0,
+                    "alwaysList": false,
+                    "alwaysSingle": false,
+                    "alwaysDict": false,
+                    "wrapper": {
+                        "bLabelHidden": false,
+                        "displayName": "outExec",
+                        "wires": {
+                            "1": {
+                                "sourceUUID": "7e27f0dc-0662-40ed-8df2-c41e105644dd",
+                                "destinationUUID": "c63b397d-faac-4ff8-835a-4042c50d1fec",
+                                "sourceName": "LoadExcelTable_outExec",
+                                "destinationName": "CloseExcel_inExec",
+                                "uuid": "c0dcd62c-6806-4cac-8751-6e31f0e4e256",
+                                "hOffsetL": "0.0",
+                                "hOffsetR": "0.0",
+                                "hOffsetLSShape": "0.0",
+                                "hOffsetRSShape": "0.0",
+                                "vOffset": "0.0",
+                                "vOffsetSShape": "0.0",
+                                "snapVToFirst": 1,
+                                "snapVToSecond": 0
+                            }
+                        }
+                    }
+                }
+            ],
+            "meta": {
+                "var": {},
+                "label": "LoadExcelTable"
+            },
+            "wrapper": {
+                "collapsed": false,
+                "headerHtml": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\nhr { height: 1px; border-width: 0; }\nli.unchecked::marker { content: \"\\2610\"; }\nli.checked::marker { content: \"\\2612\"; }\n</style></head><body style=\" font-family:'Consolas'; font-size:6pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">LoadExcelTable</p></body></html>",
+                "exposeInputsToCompound": false,
+                "groups": {
+                    "input": {},
+                    "output": {}
+                }
+            },
+            "x": 141.0,
+            "y": -110.0
+        }
+    ],
+    "depth": 1,
+    "isRoot": true,
+    "parentGraphName": "None",
+    "fileVersion": "3.0.0",
+    "activeGraph": "root"
+}

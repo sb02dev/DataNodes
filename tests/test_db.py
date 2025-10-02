@@ -115,6 +115,22 @@ def test_sqlite_cnv(pycnv, testfolder, test_name, result_pins_with_expected):
                  [2.0, 'bbb', 120.0],
                  [3.0, 'ccc', 130.0]], columns=['id', 'name', 'value'])),
         ]),
+        ('excel_002_loadrange', 'OpenExcel_inExec', [
+            ('LoadExcelRange_out', pd.DataFrame(
+                [[1.0, 'aaa'],
+                 [2.0, 'bbb']], columns=['id', 'name'])),
+        ]),
+        ('excel_003_updatetable', 'OpenExcel_inExec', [
+            ('LoadExcelTable_out', pd.DataFrame(
+                [[1.0, 'aaa', 110.0],
+                 [2.0, 'bbb', 120.0]], columns=['id', 'name', 'value'])),
+        ]),
+        ('excel_004_refreshtable', 'OpenExcel_inExec', [
+            ('LoadExcelTable_out', pd.DataFrame(
+                [[1.0, '1*'],
+                 [2.0, '2**'],
+                 [3.0, '3***']], columns=['id', 'name'])),
+        ]),
     ]
 )
 def test_excel_graph(pycnv, testfolder, test_name, exec_pin, result_pins_with_expected):
@@ -141,6 +157,22 @@ def test_excel_graph(pycnv, testfolder, test_name, exec_pin, result_pins_with_ex
                 [[1.0, 'aaa', 110.0],
                  [2.0, 'bbb', 120.0],
                  [3.0, 'ccc', 130.0]], columns=['id', 'name', 'value'])),
+        ]),
+        ('excel_002_loadrange', [
+            ('LoadExcelRange_out', pd.DataFrame(
+                [[1.0, 'aaa'],
+                 [2.0, 'bbb']], columns=['id', 'name'])),
+        ]),
+        ('excel_003_updatetable', [
+            ('LoadExcelTable_out', pd.DataFrame(
+                [[1.0, 'aaa', 110.0],
+                 [2.0, 'bbb', 120.0]], columns=['id', 'name', 'value'])),
+        ]),
+        ('excel_004_refreshtable', [
+            ('LoadExcelTable_out', pd.DataFrame(
+                [[1.0, '1*'],
+                 [2.0, '2**'],
+                 [3.0, '3***']], columns=['id', 'name'])),
         ]),
     ]
 )
