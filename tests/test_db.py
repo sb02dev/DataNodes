@@ -104,3 +104,56 @@ def test_sqlite_cnv(pycnv, testfolder, test_name, result_pins_with_expected):
         else:
             assert mem[pinname] == value, \
                 f"Wrong value ({value}) returned for pin '{pinname}'"
+
+
+@pytest.mark.parametrize(
+    ["test_name", "exec_pin", "result_pins_with_expected"],
+    [
+        ('excel_001_loadtable', 'OpenExcel_inExec', [
+            ('LoadExcelTable_out', pd.DataFrame(
+                [[1.0, 'aaa', 110.0],
+                 [2.0, 'bbb', 120.0],
+                 [3.0, 'ccc', 130.0]], columns=['id', 'name', 'value'])),
+        ]),
+    ]
+)
+def test_excel_graph(pycnv, testfolder, test_name, exec_pin, result_pins_with_expected):
+    """Runs the given graph and checks the given pin results against
+    their expected values
+    """
+    gman = testhelper.run_graph_and_return(
+        pycnv, testfolder, test_name, exec_pin)
+    for pinname, value in result_pins_with_expected:
+        res = gman.findPinByName(pinname).getData()
+        if isinstance(res, pd.DataFrame):
+            assert res.equals(value), \
+                f"Wrong value ({value}) returned for pin '{pinname}'"
+        else:
+            assert res == value, \
+                f"Wrong value ({value}) returned for pin '{pinname}'"
+
+
+@pytest.mark.parametrize(
+    ["test_name", "result_pins_with_expected"],
+    [
+        ('excel_001_loadtable', [
+            ('LoadExcelTable_out', pd.DataFrame(
+                [[1.0, 'aaa', 110.0],
+                 [2.0, 'bbb', 120.0],
+                 [3.0, 'ccc', 130.0]], columns=['id', 'name', 'value'])),
+        ]),
+    ]
+)
+def test_excel_cnv(pycnv, testfolder, test_name, result_pins_with_expected):
+    """Converts the given graph to python, runs the python and checks the
+    given pin results against their expected values
+    """
+    mem = testhelper.run_graph_in_python(pycnv, testfolder, test_name)
+    # get output & assert
+    for pinname, value in result_pins_with_expected:
+        if isinstance(mem[pinname], pd.DataFrame):
+            assert mem[pinname].equals(value), \
+                f"Wrong value ({value}) returned for pin '{pinname}'"
+        else:
+            assert mem[pinname] == value, \
+                f"Wrong value ({value}) returned for pin '{pinname}'"

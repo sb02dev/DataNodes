@@ -12,3 +12,9 @@ def test_conn(pycnv, testfolder, test_name):
 def test_sqlite(pycnv, testfolder, test_name):
     """Tests all graphs from the parameters"""
     testhelper.run_export_and_compare(pycnv, testfolder, "sqlite_"+test_name)
+
+
+@pytest.mark.parametrize("test_name", testhelper.get_test_names('excel'))
+def test_excel(pycnv, testfolder, test_name):
+    """Tests all graphs from the parameters"""
+    testhelper.run_export_and_compare(pycnv, testfolder, "excel_"+test_name)
